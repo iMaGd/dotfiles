@@ -3,6 +3,10 @@
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
+	l2  = log --abbrev-commit --date=relative -n 20 --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)'
+	lg  = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(reset) %C(bold)(%ar)%C(reset) by %C(bold)%an%C(reset) in%C(yellow)%d%C(reset)%n''          %C(green)%s%C(reset)' --all
+	lgs = log --abbrev-commit --date=relative --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)'
+
 	# View the current working tree status using the short format
 	s = status -s
 
@@ -20,6 +24,9 @@
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
+
+	cm = commit -m
+	cam= commit -a -m
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
