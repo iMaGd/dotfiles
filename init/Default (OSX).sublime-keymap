@@ -1,0 +1,33 @@
+[
+	{ "keys": ["ctrl+s"], "command": "toggle_side_bar" },
+
+	{
+		"keys": ["super+alt+left"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.75, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+
+	{
+		"keys": ["super+alt+right"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.25, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+
+	{ "keys": ["alt+1"], "command": "move_to_group", "args": { "group": 0 } },
+	{ "keys": ["alt+2"], "command": "move_to_group", "args": { "group": 1 } },
+	{ "keys": ["alt+3"], "command": "move_to_group", "args": { "group": 2 } },
+	{ "keys": ["alt+4"], "command": "move_to_group", "args": { "group": 3 } },
+
+	{ "keys": ["ctrl+backquote"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+	{ "keys": ["super+shift+h"] , "command": "goto_documentation" }
+]
