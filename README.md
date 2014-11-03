@@ -25,7 +25,7 @@ set -- -f; source bootstrap.sh
 To install these dotfiles without Git:
 
 ```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,LICENSE-MIT.txt}
+cd; curl -#L https://github.com/M4Gd/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,brew.sh,packages.sh,LICENSE-MIT.txt}
 ```
 
 To update later on, just run that command again.
@@ -73,6 +73,9 @@ When setting up a new Mac, you may want to install some common [Homebrew](http:/
 
 ```bash
 ./brew.sh
+```
+```bash
+./packages.sh
 ```
 
 ## Feedback
