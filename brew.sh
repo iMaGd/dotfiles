@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
-# Install command-line tools using Homebrew.
+#
+# Homebrew
+#
+# This installs some of the common dependencies needed (or at least desired)
+# using Homebrew.
 
 # Ask for the administrator password upfront.
 sudo -v
@@ -8,11 +11,20 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Make sure we’re using the latest Homebrew.
-brew update
+# Check for Homebrew
+if test ! $(which brew)
+then
+	echo "  Installing Homebrew for you."
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
+else 
+	# Make sure we’re using the latest Homebrew.
+	brew update
+	# Upgrade any already-installed formulae.
+	brew upgrade
+fi
 
-# Upgrade any already-installed formulae.
-brew upgrade
+# Install homebrew packages
+brew install grc spark unrar imagemagick
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
