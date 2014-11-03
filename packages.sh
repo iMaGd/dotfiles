@@ -16,5 +16,8 @@ gem install compass
  
 npm install -g grunt-cli bower
 
-// Updating prefixes database
+#  Updating prefixes database
 npm update caniuse-db
+
+# Install git extras
+(cd /tmp && git clone --depth 1 https://github.com/M4Gd/git-extras.git && cd git-extras && sudo make install)
