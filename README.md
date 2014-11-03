@@ -78,10 +78,6 @@ When setting up a new Mac, you may want to install some common [Homebrew](http:/
 ./packages.sh
 ```
 
-## Feedback
-
-Suggestions/improvements
-[welcome](https://github.com/mathiasbynens/dotfiles/issues)!
 
 ### Thanks to…
 
