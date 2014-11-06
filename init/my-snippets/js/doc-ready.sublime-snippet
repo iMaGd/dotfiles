@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+(function(\$){
+	
+	\$(function(){
+
+	});
+
+})(jQuery);
+]]></content>
+	<tabTrigger>docready</tabTrigger>
+	<description>JS - Document Ready</description>
+	<scope>source.js</scope>
+</snippet>
