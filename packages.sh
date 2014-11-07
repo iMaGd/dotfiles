@@ -24,7 +24,7 @@ npm update caniuse-db
 
 
 # Install chromecast-backgrounds as wallpapers
-git clone git@github.com:dconnolly/chromecast-backgrounds.git
+git clone git@github.com:M4Gd/chromecast-backgrounds.git
 cd chromecast-backgrounds/
 npm install lodash q request nopt chalk fs
 sudo node cli.js --download="/Library/Desktop Pictures/my-images" --size=2560  --width=2560 --height=1440
