@@ -14,10 +14,19 @@ npm install -g jshint
 
 gem install compass
  
-npm install -g grunt-cli bower
+npm install -g grunt-cli bower spark-cli
 
 #  Updating prefixes database
 npm update caniuse-db
 
 # Install git extras
 (cd /tmp && git clone --depth 1 https://github.com/M4Gd/git-extras.git && cd git-extras && sudo make install)
+
+
+# Install chromecast-backgrounds as wallpapers
+git clone git@github.com:dconnolly/chromecast-backgrounds.git
+cd chromecast-backgrounds/
+npm install lodash q request nopt chalk fs
+sudo node cli.js --download="/Library/Desktop Pictures/my-images" --size=2560  --width=2560 --height=1440
+cd ..
+
