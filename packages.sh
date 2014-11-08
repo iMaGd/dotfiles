@@ -19,14 +19,45 @@ npm install -g grunt-cli bower spark-cli
 #  Updating prefixes database
 npm update caniuse-db
 
-# Install git extras
-(cd /tmp && git clone --depth 1 https://github.com/M4Gd/git-extras.git && cd git-extras && sudo make install)
+###############################################################################
+# Install git extras                                                          #
+###############################################################################
 
+(cd ~/dotfiles && git clone --depth 1 https://github.com/M4Gd/git-extras.git && cd git-extras && sudo make install && cd ~/dotfiles)
 
-# Install chromecast-backgrounds as wallpapers
+###############################################################################
+# Install chromecast-backgrounds as wallpapers                                #
+###############################################################################
+
+cd ~/dotfiles
 git clone git@github.com:M4Gd/chromecast-backgrounds.git
 cd chromecast-backgrounds/
 npm install lodash q request nopt chalk fs
 sudo node cli.js --download="/Library/Desktop Pictures/my-images" --size=2560  --width=2560 --height=1440
-cd ..
+cd ~/dotfiles
+
+
+###############################################################################
+# Sublime Text                                                                #
+###############################################################################
+
+echo "Setting Sublime preferences"
+
+# Install Sublime Text settings
+cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+
+# Install Sublime Color Scheme
+cp -r "init/base16-eighties.dark (SL).tmTheme" "~/Library/Application Support/Sublime Text*/Packages/User/base16-eighties.dark (SL).tmTheme" 2> /dev/null
+
+# Install Sublime Key Bindings
+cp -r "init/Default (OSX).sublime-keymap" "~/Library/Application Support/Sublime Text*/Packages/User/Default (OSX).sublime-keymap" 2> /dev/null
+
+# Install Sublime Packages
+cp -r init/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Package\ Control.sublime-settings 2> /dev/null
+
+# Install Sublime Snippets
+cp -r init/my-snippets ~/Library/Application\ Support/Sublime\ Text*/Packages/User 2> /dev/null
+
+# Install DroidSansMono Font
+open "~/dotfiles/init/DroidSansMono.ttf"
 
