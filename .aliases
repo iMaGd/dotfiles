@@ -62,6 +62,10 @@ alias o="open"
 alias oo="open ."
 
 
+# System info
+alias cpu="( sysctl -a | grep machdep.cpu ) && (system_profiler | grep Processor)"
+
+
 
 # Applications ------------------------------------------
 alias xcode="open -a '/Applications/XCode.app'"
