@@ -16,3 +16,4 @@ alias plugins="cd /Volumes/Lab/localhost/www/wordpress/en/wp-content/plugins"
 alias themes="cd /Volumes/Lab/localhost/www/wordpress/en/wp-content/themes"
 
 alias db="cd ~/Volumes/Mj/Dropbox"
+alias lab="/volumes/LAB/lab/framework"
