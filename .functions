@@ -555,12 +555,30 @@ smart-clone ()
     if [ "$1" == "" ]; then
         echo "smart-clone <git-repo-url>";
     else
-        if [ ! -d $1 ]; then
-            REPONAME=(basename $1 .git);
+        REPONAME=$(basename $1 .git);
+
+        if [ ! -d $REPONAME ]; then
+            echo "cloning repo .."
             git clone $1;
-            cd $1;
+            cd $REPONAME;
+
         else
-            echo "$1 directory exists";
+            echo "[$REPONAME] already exists. Switched to REPO.";
+            cd $REPONAME;
+
+            read -p "Check whether local and remote are in sync?[ y(diff), f(fetch), p(pull) ]" -n 1 -r
+            echo    # (optional) move to a new line
+            if [[ $REPLY =~ ^[YyDd]$ ]]; then
+              git diff origin/master;
+              git diff origin/develop;
+            fi;
+            if [[ $REPLY =~ ^[Ff]$ ]]; then
+              git fetch --all;
+            fi;
+            if [[ $REPLY =~ ^[Pp]$ ]]; then
+              git pull --all;
+            fi;
+
         fi;
-    fi
+    fi;
 }
