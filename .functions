@@ -549,3 +549,18 @@ z() {
   fi
  fi
 }
+
+smart-clone ()
+{
+    if [ "$1" == "" ]; then
+        echo "smart-clone <git-repo-url>";
+    else
+        if [ ! -d $1 ]; then
+            REPONAME=(basename $1 .git);
+            git clone $1;
+            cd $1;
+        else
+            echo "$1 directory exists";
+        fi;
+    fi
+}
