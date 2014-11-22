@@ -115,10 +115,12 @@ function phpserver() {
 # Compare original and gzipped file size
 function gz() {
 	local origsize=$(wc -c < "$1");
+  origsize=$(( origsize / 1024 ));
 	local gzipsize=$(gzip -c "$1" | wc -c);
+  gzipsize=$(( gzipsize / 1024 ));
 	local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
-	printf "orig: %d bytes\n" "$origsize";
-	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
+	printf "original size: %d KB\n" "$origsize";
+	printf "gzipped  size: %d KB (%2.2f%%)\n" "$gzipsize" "$ratio";
 }
 
 # Syntax-highlight JSON strings or files
@@ -550,7 +552,7 @@ z() {
  fi
 }
 
-smart-clone ()
+gclone ()
 {
     if [ "$1" == "" ]; then
         echo "smart-clone <git-repo-url>";
