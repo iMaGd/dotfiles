@@ -56,7 +56,7 @@ cp -r "init/Default (OSX).sublime-keymap" "~/Library/Application Support/Sublime
 cp -r init/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Package\ Control.sublime-settings 2> /dev/null
 
 # Install Sublime Snippets
-cp -r init/my-snippets ~/Library/Application\ Support/Sublime\ Text*/Packages/User 2> /dev/null
+cp -r init/subl-snippets ~/Library/Application\ Support/Sublime\ Text*/Packages/User 2> /dev/null
 
 # Install DroidSansMono Font
 open "~/dotfiles/init/DroidSansMono.ttf"

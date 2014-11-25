@@ -1,8 +1,11 @@
 <snippet>
 	<content><![CDATA[
-(function(\$){
+(function(\$, window, document, undefined){
+	"use strict";
 	
-})(jQuery);
+	$0
+
+})(jQuery, window, document);
 ]]></content>
 	<tabTrigger>siaf</tabTrigger>
 	<description>JS - Announcement Function</description>
