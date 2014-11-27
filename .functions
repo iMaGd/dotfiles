@@ -555,7 +555,7 @@ z() {
 gclone ()
 {
     if [ "$1" == "" ]; then
-        echo "smart-clone <git-repo-url>";
+        echo "gclone <git-repo-url>";
     else
         REPONAME=$(basename $1 .git);
 
