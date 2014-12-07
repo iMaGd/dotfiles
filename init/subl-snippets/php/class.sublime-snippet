@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[${1:ClassName} extends ${2:AnotherClass}{
+	
+	public ${3:$prop};
+
+	/**
+	 * __constructor
+	 */
+	function __constructor(){
+
+	}
+	
+	/**
+	 * Public function 
+	 */
+	public function ${4:publicFunction}(){
+
+	}
+} 
+]]></content>
+	<tabTrigger>class</tabTrigger>
+	<description>PHP - Class</description>
+	<scope>php</scope>
+</snippet>
