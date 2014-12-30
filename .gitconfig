@@ -22,6 +22,9 @@
 	# Clone a repository including all submodules
 	c = clone --recursive
 
+	# Get total number of lines in current repo
+	line = ls-files | xargs cat | wc -l
+
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
