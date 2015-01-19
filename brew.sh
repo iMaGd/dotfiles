@@ -74,5 +74,8 @@ brew install node
 
 brew install homebrew/versions/lua52
 
+# font rendering engines
+brew install ttfautohint fontforge --with-python
+
 # Remove outdated versions from the cellar.
 brew cleanup
