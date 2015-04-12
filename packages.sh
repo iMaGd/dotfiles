@@ -11,9 +11,10 @@ npm config set registry http://registry.npmjs.org/
 # packages for sublimelinter
 npm install -g csslint
 npm install -g jshint
+npm install -g preprocess
 
 gem install compass
- 
+
 npm install -g grunt-cli bower spark-cli
 
 #  Updating prefixes database
