@@ -1,24 +1,40 @@
 <snippet>
-	<content><![CDATA[${1:ClassName} extends ${2:AnotherClass}{
-	
-	public ${3:$prop};
+	<content><![CDATA[
+class ${1:ClassName} extends ${2:AnotherClass} {
 
 	/**
-	 * __constructor
+	 * Instance of this class.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @var      object
 	 */
-	function __constructor(){
+	protected static \$instance = null;
 
+
+	function __construct(){
+		$0
 	}
-	
+
 	/**
-	 * Public function 
+	 * Return an instance of this class.
+	 *
+	 * @since     1.0.0
+	 *
+	 * @return    object    A single instance of this class.
 	 */
-	public function ${4:publicFunction}(){
+	public static function get_instance() {
 
+		// If the single instance hasn't been set, set it now.
+		if ( null == self::\$instance ) {
+			self::\$instance = new self;
+		}
+
+		return self::\$instance;
 	}
-} 
+}
 ]]></content>
-	<tabTrigger>class</tabTrigger>
-	<description>PHP - Class</description>
-	<scope>php</scope>
+	<tabTrigger>class_singleton</tabTrigger>
+	<description>Class with static instance</description>
+	<scope>source.php</scope>
 </snippet>
