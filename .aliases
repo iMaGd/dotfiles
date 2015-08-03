@@ -16,9 +16,9 @@ alias g="git"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
+    colorflag="-G"
 fi
 
 # List all files colorized in long format
@@ -167,7 +167,7 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+    alias "$method"="lwp-request -m '$method'"
 done
 
 # Make Grunt print stack traces by default
@@ -197,8 +197,12 @@ alias gb="git branch"
 alias gbl="git branch --list"
 alias gd="git diff "
 alias gdw="git diff --word-diff"
-alias log1="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gl="log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(reset) %C(bold)(%ar)%C(reset) by %C(bold)%an%C(reset) in%C(yellow)%d%C(reset)%n''          %C(green)%s%C(reset)' --all"
+alias gl1="git log --pretty=oneline -n 20 --graph --abbrev-commit"
+alias gl2="log --abbrev-commit --date=relative -n 20 --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)"
+alias gl3="git log --abbrev-commit --date=relative --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)'"
+alias gl4="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gl5="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias undopush="git push -f origin HEAD^:master"
 alias undo="git reset --soft HEAD^"
 alias gdev="git checkout develop"
