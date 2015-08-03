@@ -12,11 +12,15 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 ###############################################################################
 
 # custom directories ----------------------------------------------------------
-alias plugins="cd /Volumes/Lab/localhost/www/wordpress/en/wp-content/plugins"
-alias themes="cd /Volumes/Lab/localhost/www/wordpress/en/wp-content/themes"
+alias plugins="cd /LAB/projects/wp/plugins"
+alias themes="cd /LAB/projects/wp/themes"
+
+alias wp-plugins="cd /LAB/localhost/www/wordpress/en/wp-content/plugins"
+alias wp-themes="cd /LAB/localhost/www/wordpress/en/wp-content/themes"
+
 # directory for cloned repos
-alias clones="cd /Volumes/Lab/localhost/www/htmllab/clones"
+alias clones="cd /LAB/projects/clones"
 
 
-alias db="cd ~/Volumes/Mj/Dropbox"
-alias lab="cd /volumes/LAB/lab/framework"
+alias db="cd ~/Dropbox"
+alias lab="cd /LAB/projects"
