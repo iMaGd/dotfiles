@@ -12,10 +12,12 @@ npm config set registry http://registry.npmjs.org/
 npm install -g csslint
 npm install -g jshint
 npm install -g preprocess
+npm install -g csscomb
 
 gem install compass
 
-npm install -g grunt-cli bower spark-cli
+npm install -g grunt-cli
+bower spark-cli
 
 #  Updating prefixes database
 npm update caniuse-db
