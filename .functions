@@ -345,27 +345,38 @@ function build-git(){
 # Open prject if exists
 function pro(){
 
-  if [ -d "/LAB/projects/wp/plugins/$1" ]; then
+    if [ -d "/LAB/projects/wp/plugins/$1" ]; then
         cd "/LAB/projects/wp/plugins/$1";
         if [ "$2" == "o" ]; then
-        open .;
-      fi;
-      if [ "$2" == "s" ]; then
-          open .;
+            open .;
+        fi;
+        if [ "$2" == "s" ]; then
+            open .;
         fi;
         return 0;
-  fi;
+    fi;
 
-  if [ -d "/LAB/projects/wp/themes/$1" ]; then
+    if [ -d "/LAB/projects/wp/themes/$1" ]; then
         cd "/LAB/projects/wp/themes/$1";
         if [ "$2" == "o" ]; then
-        open .;
-      fi;
-      if [ "$2" == "s" ]; then
-          open .;
+            open .;
+        fi;
+        if [ "$2" == "s" ]; then
+            open .;
         fi;
         return 0;
-  fi;
+    fi;
+
+    if [ -d "/LAB/projects/$1" ]; then
+        cd "/LAB/projects/$1";
+        if [ "$2" == "o" ]; then
+            open .;
+        fi;
+        if [ "$2" == "s" ]; then
+            open .;
+        fi;
+        return 0;
+    fi;
 }
 
 function plugin(){
