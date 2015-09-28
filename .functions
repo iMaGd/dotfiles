@@ -257,7 +257,7 @@ function changelogs(){
 }
 
 # custom build commands ---
-function build-theme(){
+function build_theme(){
   DIRNAME=${PWD};
   FOLDERNAME=${PWD##*/};
   if [ -d ~/Desktop/$FOLDERNAME ]; then
@@ -291,10 +291,10 @@ function build-theme(){
   cd ~/Desktop;
   zip -r $FOLDERNAME.zip $FOLDERNAME;
   echo $FOLDERNAME.zip created sucessfully!;
-  cd $DIRNAME
+  cd $DIRNAME;
 }
 
-function build-git(){
+function build_git(){
   DIRNAME=${PWD};
   FOLDERNAME=${PWD##*/};
   if [ -d ~/Desktop/$FOLDERNAME ]; then
