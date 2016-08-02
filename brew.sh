@@ -67,6 +67,8 @@ brew install p7zip
 brew install rename
 brew install tree
 
+brew install jpegoptim
+brew install pngquant
 
 # Install Node.js. Note: this installs `npm` too, using the recommended
 # installation method.
