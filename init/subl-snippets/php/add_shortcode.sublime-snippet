@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+function auxin_${1:custom_name}_shortcode( \$atts , \$content = null ) {
+
+    // parse attributes
+    \$atts = shortcode_atts(
+        array(
+            'ids' => ''
+        ),
+        \$atts,
+        '${2:custom-name}'
+    );
+
+    extract( \$atts );
+
+    \$wp_args = array(
+        'post_type'             => 'post',
+        'orderby'               => 'menu_order date',
+        'order'                 => 'DESC',
+        'post__not_in'          => '',
+        'post__in'              => '',
+        'post_status'           => 'publish',
+        'posts_per_page'        => -1,
+        'ignore_sticky_posts'   => 1
+    );
+
+    // Query
+    \$the_query = new WP_Query( \$wp_args );
+
+    // Posts
+    \$output = '<ul>';
+    while ( \$the_query->have_posts() ) : \$the_query->the_post();
+
+        \$output .= '<li>' . get_the_title() . '</li>';
+
+    endwhile;
+    \$output .= '</ul>';
+
+    // Reset post data
+    wp_reset_postdata();
+
+    // Return code
+    return \$output;
+}
+
+add_shortcode( '${2:custom-name}', 'auxin_${1:custom_name}_shortcode' );
+]]></content>
+	<tabTrigger>add_shortcode</tabTrigger>
+	<description>Shortcode with loop</description>
+	<scope>source.php</scope>
+</snippet>
+
