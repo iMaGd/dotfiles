@@ -212,6 +212,10 @@ alias gcm="git commit -m"
 alias gc="git commit"
 alias gch="git checkout"
 
+# Remove all remote merged branches except 'origin/master' and 'origin/develop' branches
+grubr="git branch -r --merged develop | grep -v origin/develop | grep -v origin/master | cut -d/ -f2- | xargs -n 1 git push --delete origin"
+# Remove all local merged branches except 'master' and 'develop' branches
+grub="git branch --merged develop | grep -v develop | grep -v master | xargs -n 1 git branch -d"
 
 # web server aliases ----------------------------------------------------
 alias amppsStart="sudo /Applications/AMPPS/apache/bin/httpd -k start"

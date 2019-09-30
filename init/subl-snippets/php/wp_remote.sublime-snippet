@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+global \$wp_version;
+
+\$args = array(
+    'user-agent' => 'WordPress/'. \$wp_version.'; '. get_site_url(),
+    'timeout'    => ( ( defined('DOING_CRON') && DOING_CRON ) ? 30 : 10 ),
+    'body'       => array(
+        '${1:action}'    => '${2:value}'
+    )
+);
+
+\$request = wp_remote_post( ${3:remote_url}, \$args );
+
+if ( is_wp_error( \$request ) || wp_remote_retrieve_response_code( \$request ) !== 200 ) {
+    return new WP_Error( 'no_response', 'Error while receiving remote data' );
+}
+
+\$response = \$request['body'];
+]]></content>
+	<tabTrigger>wp_rempte</tabTrigger>
+	<description>wp_remote_post</description>
+	<scope>source.php</scope>
+</snippet>
