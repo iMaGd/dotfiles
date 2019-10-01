@@ -2,9 +2,8 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 
 # use none-ssl node respository
 npm config set registry http://registry.npmjs.org/
@@ -15,29 +14,9 @@ npm install -g preprocess
 npm install -g csscomb
 
 gem install compass
+gem install uglifier
 
 npm install -g grunt-cli
-bower spark-cli
-
-#  Updating prefixes database
-npm update caniuse-db
-
-###############################################################################
-# Install git extras                                                          #
-###############################################################################
-
-(cd ~/dotfiles && git clone --depth 1 https://github.com/M4Gd/git-extras.git && cd git-extras && sudo make install && cd ~/dotfiles)
-
-###############################################################################
-# Install chromecast-backgrounds as wallpapers                                #
-###############################################################################
-
-cd ~/dotfiles
-git clone git@github.com:M4Gd/chromecast-backgrounds.git
-cd chromecast-backgrounds/
-npm install lodash q request nopt chalk fs
-sudo node cli.js --download="/Library/Desktop Pictures/my-images" --size=2560  --width=2560 --height=1440
-cd ~/dotfiles
 
 
 ###############################################################################
@@ -64,3 +43,9 @@ cp -r init/subl-snippets ~/Library/Application\ Support/Sublime\ Text*/Packages/
 # Install DroidSansMono Font
 open "~/dotfiles/init/DroidSansMono.ttf"
 
+# Install Powerline fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
