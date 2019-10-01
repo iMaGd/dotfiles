@@ -97,5 +97,98 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
+# =============================================
+
+# libraries to manipulate media
+brew install ffmpeg imagemagick
+
+# Add a public key to a remote machine authorized_keys file
+brew install ssh-copy-id
+
+# RAR Archiver
+brew cask install rar
+brew install unrar
+
+# Git
+brew install git git-extras git-quick-stats 
+
+# File retriever
+brew install wget 
+
+# Install and upgrade vim 
+brew install vim openssl
+brew upgrade vim openssl
+
+# Install docker
+brew cask install docker 
+
+# PHP package manager  
+brew install composer
+brew upgrade composer
+
+# Install mysql
+brew install mysql mysql@5.7
+
+# Install apache
+brew install httpd
+
+# Install ngnix
+brew install nginx
+
+# Install WordPress tools
+brew install wp-cli wpscan 
+
+# Install PHP IDE
+brew cask install phpstorm
+
+# Javascript package managers
+brew install node yarn 
+
+# Javascript dev tools
+brew install eslint typescript webpack 
+
+# Install Firefox
+brew cask install firefox
+
+# Opera and Brave browsers
+brew cask install opera brave-browser
+
+# Development general tools
+brew cask install iterm2 visual-studio-code sublime-text poedit
+
+# Communication apps
+brew cask install discord telegram skype teamspeak-client teamviewer
+
+# Share apps 
+brew cask install dropbox evernote 
+
+# Security apps
+brew cask install macpass
+
+# Network apps
+brew cask install secure-pipes
+
+# Media apps 
+brew cask install spotify vlc 
+
+# Video editing 
+brew cask install quik 
+
+# Extra apps 
+brew cask install moom vnc-viewer whatpulse 
+
+# File transfer apps
+brew cask install transmit free-download-manager 
+
+# Youtube downloader 
+brew install youtube-dl
+
+# Document apps 
+brew cask install anki adobe-acrobat-reader
+
+# =============================================
+
 # Remove outdated versions from the cellar.
 brew cleanup
+
+gem update --system
