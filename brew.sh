@@ -43,86 +43,32 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-brew install php
+brew install php php@7.1
 brew install gmp
-
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
-
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
-brew install xz
-
-# Install other useful binaries.
-brew install ack
-#brew install exiv2
-brew install git
-brew install git-lfs
-brew install gs
-brew install imagemagick --with-webp
-brew install lua
-brew install lynx
-brew install p7zip
-brew install pigz
-brew install pv
-brew install rename
-brew install rlwrap
-brew install ssh-copy-id
-brew install tree
-brew install vbindiff
-brew install zopfli
 
 # =============================================
 
+# Better alternative for spotlight
+brew cask install alfred
+
 # libraries to manipulate media
-brew install ffmpeg imagemagick
+brew install imagemagick --with-webp
+brew install ffmpeg tree
 
 # Add a public key to a remote machine authorized_keys file
-brew install ssh-copy-id
+brew install ssh-copy-id sshpass
 
 # RAR Archiver
-brew cask install rar
-brew install unrar
+brew cask install rar keka
+brew install unrar pigz
 
 # Git
-brew install git git-extras git-quick-stats 
-
-# File retriever
-brew install wget 
-
-# Install and upgrade vim 
-brew install vim openssl
-brew upgrade vim openssl
+brew install git git-lfs git-extras git-quick-stats
 
 # Install docker
-brew cask install docker 
+brew cask install docker
 
-# PHP package manager  
+# PHP package manager
 brew install composer
 brew upgrade composer
 
@@ -136,19 +82,31 @@ brew install httpd
 brew install nginx
 
 # Install WordPress tools
-brew install wp-cli wpscan 
+brew install wp-cli wpscan
 
 # Install PHP IDE
 brew cask install phpstorm
 
 # Javascript package managers
-brew install node yarn 
+brew install node yarn
 
-# Javascript dev tools
-brew install eslint typescript webpack 
+# Install rsync
+brew install rsync
 
-# Install Firefox
-brew cask install firefox
+# Python
+brew install python
+
+# Compare files and folders using simple, powerful commands
+brew cask install beyond-compare
+
+# a tiny menu bar calendar
+brew cask install itsycal
+
+# Move and resize windows
+brew cask install spectacle
+
+# Install Chrome & Firefox
+brew cask install google-chrom firefox
 
 # Opera and Brave browsers
 brew cask install opera brave-browser
@@ -159,8 +117,8 @@ brew cask install iterm2 visual-studio-code sublime-text poedit
 # Communication apps
 brew cask install discord telegram skype teamspeak-client teamviewer
 
-# Share apps 
-brew cask install dropbox evernote 
+# Share apps
+brew cask install dropbox evernote
 
 # Security apps
 brew cask install macpass
@@ -168,27 +126,45 @@ brew cask install macpass
 # Network apps
 brew cask install secure-pipes
 
-# Media apps 
-brew cask install spotify vlc 
+# Media apps
+brew cask install spotify vlc
 
-# Video editing 
-brew cask install quik 
+# Video editing
+brew cask install quik
 
-# Extra apps 
-brew cask install moom vnc-viewer whatpulse 
+# Color picker
+brew cask install pixel-picker
+
+# Extra apps
+brew cask install moom vnc-viewer whatpulse
 
 # File transfer apps
-brew cask install transmit free-download-manager 
+brew cask install transmit free-download-manager
 
-# Youtube downloader 
+# Youtube downloader
 brew install youtube-dl
 
-# Document apps 
+# Document apps
 brew cask install anki adobe-acrobat-reader
+
+# Finder Toolbar app for macOS to open the current directory in Terminal
+brew cask install openinterminal
+
+# Preview list of useful Quick Look plugins for developers
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
+
+# Install fonts
+brew tap caskroom/fonts
+brew cask install font-droidsansmono-nerd-font-mono
+brew cask install font-fira-code courier-new
+
+# Cross-platform monitoring tool
+brew install glances
+
+# Update gem
+gem update --system
 
 # =============================================
 
 # Remove outdated versions from the cellar.
 brew cleanup
-
-gem update --system

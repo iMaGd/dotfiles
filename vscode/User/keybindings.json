@@ -1,0 +1,12 @@
+[
+	{
+		"key": "cmd+y",
+		"command": "redo",
+		"when": "textInputFocus && isMac"
+	},
+	{
+		"key": "ctrl+y",
+		"command": "redo",
+		"when": "!isMac"
+	}
+]
