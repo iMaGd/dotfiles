@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+class ${1:ClassName} extends ${2:AnotherClass} {
+
+	/**
+	 * Instance of this class.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @var      object
+	 */
+	protected static \$instance = null;
+
+
+	function __construct(){
+		$0
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since     1.0.0
+	 *
+	 * @return    object    A single instance of this class.
+	 */
+	public static function get_instance() {
+
+		// If the single instance hasn't been set, set it now.
+		if ( null == self::\$instance ) {
+			self::\$instance = new self;
+		}
+
+		return self::\$instance;
+	}
+}
+]]></content>
+	<tabTrigger>class_singleton</tabTrigger>
+	<description>Class with static instance</description>
+	<scope>source.php</scope>
+</snippet>

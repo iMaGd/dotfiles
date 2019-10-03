@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+(function(\$, window, document, undefined){
+	"use strict";
+	${1:var Modernizr = window.Modernizr;}
+
+	\$(function(){
+		$0
+	});
+
+})(jQuery, window, document);
+]]></content>
+	<tabTrigger>docready</tabTrigger>
+	<description>JS - Document Ready</description>
+	<scope>source.js</scope>
+</snippet>
