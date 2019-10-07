@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+for (\$var = 0; ++\$var < 10; ) {
+    // ${1:action}
+}
+]]></content>
+	<tabTrigger>for</tabTrigger>
+	<description>shortcut the for-loop</description>
+	<scope>source.php</scope>
+</snippet>

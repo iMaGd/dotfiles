@@ -1,7 +1,7 @@
 {
 	"auto_complete_selector": "source, text",
 	"bold_folder_labels": false,
-	"color_scheme": "Packages/User/base16-eighties.dark (SL).tmTheme",
+	"color_scheme": "Packages/User/base16-eighties.dark.tmTheme",
 	"folder_exclude_patterns":
 	[
 		".svn",

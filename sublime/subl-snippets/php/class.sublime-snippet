@@ -5,8 +5,6 @@ class ${1:ClassName} extends ${2:AnotherClass} {
 	/**
 	 * Instance of this class.
 	 *
-	 * @since    1.0.0
-	 *
 	 * @var      object
 	 */
 	protected static \$instance = null;
@@ -19,8 +17,6 @@ class ${1:ClassName} extends ${2:AnotherClass} {
 	/**
 	 * Return an instance of this class.
 	 *
-	 * @since     1.0.0
-	 *
 	 * @return    object    A single instance of this class.
 	 */
 	public static function get_instance() {
@@ -32,9 +28,57 @@ class ${1:ClassName} extends ${2:AnotherClass} {
 
 		return self::\$instance;
 	}
+
+    /**
+     * Magic method to get the value of accessible properties
+     *
+     * @param   string  $name The property name
+     * @return  string  The value of property
+     */
+    public function __get( \$name ){
+
+        if( property_exists( \$this, \$name ) ){
+            return \$this->\$name;
+        }
+
+        return null;
+    }
+
+    /**
+     * Magic method to set value for properties
+     *
+     * @param   string  $name  The property name
+     * @param   string  $value The property value
+     * @return  bool    True, if the value was set to property successfully, False on failure.
+     */
+    public function __set( \$name, \$value ){
+        if( isset( \$this->\$name ) ){
+            \$this->\$name = \$value;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Magic method to return string while printing the class instance
+     *
+     * @param   string  $name The property name
+     * @return  string  The value of property
+     */
+    public function __toString(){
+        return '';
+    }
+
+    /**
+     * Magic method to change this object while cloning
+     *
+     * @return void
+     */
+    public function __clone(){}
+
 }
 ]]></content>
-	<tabTrigger>class_singleton</tabTrigger>
+	<tabTrigger>class</tabTrigger>
 	<description>Class with static instance</description>
 	<scope>source.php</scope>
 </snippet>
