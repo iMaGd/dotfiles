@@ -68,25 +68,6 @@ brew install git git-lfs git-extras git-quick-stats
 # Install docker
 brew cask install docker
 
-# PHP package manager
-brew install composer
-brew upgrade composer
-
-# Install mysql
-brew install mysql mysql@5.7
-
-# Install apache
-brew install httpd
-
-# Install ngnix
-brew install nginx
-
-# Install WordPress tools
-brew install wp-cli wpscan
-
-# Install PHP IDE
-brew cask install phpstorm
-
 # Javascript package managers
 brew install node yarn
 
