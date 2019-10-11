@@ -27,3 +27,6 @@ brew cask install sequel-pro
 
 # Install PHP IDE
 brew cask install phpstorm
+
+#
+composer global require squizlabs/php_codesniffer
