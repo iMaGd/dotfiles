@@ -125,6 +125,9 @@ brew cask install transmit free-download-manager
 # Simple and visually-pleasing Pomodoro timer
 brew cask install pomotroid
 
+# Torrent
+brew cask install qBittorrent
+
 # Youtube downloader
 brew install youtube-dl
 
