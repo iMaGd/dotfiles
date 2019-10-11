@@ -1,4 +1,11 @@
 
+# Set vscode setting
+rsync -av ./vscode/ ~/Library/Application\ Support/Code/User/
+
+# Set sublime setting
+rsync -av ./sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+
+
 # iTerm2 - Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
 
