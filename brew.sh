@@ -60,7 +60,7 @@ brew install ssh-copy-id sshpass
 
 # RAR Archiver
 brew cask install rar keka
-brew install unrar pigz
+# brew install unrar pigz
 
 # Git
 brew install git git-lfs git-extras git-quick-stats
@@ -121,6 +121,9 @@ brew cask install moom vnc-viewer whatpulse
 
 # File transfer apps
 brew cask install transmit free-download-manager
+
+# Simple and visually-pleasing Pomodoro timer
+brew cask install pomotroid
 
 # Youtube downloader
 brew install youtube-dl
