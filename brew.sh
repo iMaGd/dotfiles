@@ -141,7 +141,7 @@ brew cask install openinterminal
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
 
 # Install fonts
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-droidsansmono-nerd-font-mono
 brew cask install font-fira-code courier-new
 
