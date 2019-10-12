@@ -1,6 +1,6 @@
 
 # Set vscode setting
-rsync -av ./vscode/ ~/Library/Application\ Support/Code/User/
+rsync -av ./vscode/ ~/Library/Application\ Support/Code/
 
 # Set sublime setting
 rsync -av ./sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
