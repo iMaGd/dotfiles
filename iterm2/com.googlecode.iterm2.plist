@@ -384,7 +384,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>521 470 796 473 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2530 42 910 1122 0 0 3440 1417 </string>
+	<string>2571 61 865 378 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1338 -54 910 993 -1920 -120 1920 1200 </string>
 	<key>New Bookmarks</key>
@@ -1667,13 +1667,13 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.40333333611488342</real>
+			<real>0.42250947247851978</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
 			<string>Mj</string>
 			<key>Non Ascii Font</key>
-			<string>FiraCode-Regular 11</string>
+			<string>FiraCode-Medium 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
@@ -1889,7 +1889,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>561278688.21226895</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>17</integer>
+	<integer>18</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2692,7 +2692,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-07T06:44:38Z</date>
+	<date>2019-10-14T12:02:04Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
