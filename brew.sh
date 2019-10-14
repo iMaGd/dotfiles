@@ -87,7 +87,7 @@ brew cask install itsycal
 brew cask install spectacle
 
 # Install Chrome & Firefox
-brew cask install google-chrom firefox
+brew cask install google-chrome firefox
 
 # Opera and Brave browsers
 brew cask install opera brave-browser
@@ -144,7 +144,7 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize su
 # Install fonts
 brew tap homebrew/cask-fonts
 brew cask install font-droidsansmono-nerd-font-mono
-brew cask install font-fira-code courier-new
+brew cask install font-fira-code font-courier-new
 
 # Cross-platform monitoring tool
 brew install glances
