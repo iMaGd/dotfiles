@@ -121,6 +121,7 @@ brew cask install moom vnc-viewer whatpulse
 
 # File transfer apps
 brew cask install transmit free-download-manager
+brew cask install cyberduck
 
 # Simple and visually-pleasing Pomodoro timer
 brew cask install pomotroid
