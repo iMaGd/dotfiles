@@ -6,6 +6,8 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "brew.sh" \
+	    --exclude "vscode/" --exclude "sublime/" --exclude "iterm2/" --exclude "bin/" \
+	    --exclude "phpdev.sh" --exclude "setup.sh" \
 		--exclude "packages.sh" --exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
 	source ~/.bash_profile;
 	source ~/.functions;
