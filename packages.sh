@@ -20,3 +20,4 @@ npm install -g jshint
 # Gem packages
 gem install compass
 gem install uglifier
+gem install lolcommits
