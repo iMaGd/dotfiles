@@ -113,6 +113,9 @@ brew cask install spotify vlc
 # Video editing
 brew cask install quik
 
+# Flip clock screem saver
+brew cask install fliqlo
+
 # Color picker
 brew cask install pixel-picker
 
