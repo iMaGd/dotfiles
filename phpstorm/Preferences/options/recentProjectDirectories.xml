@@ -1,0 +1,43 @@
+<application>
+  <component name="RecentDirectoryProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="/LAB/projects/clones/averta-api" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="/LAB/projects/clones/averta-api" />
+      </list>
+    </option>
+    <option name="lastPath" value="/LAB/projects/clones/averta-api" />
+    <option name="pid" value="" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="/LAB/projects/clones/averta-api">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PS-192.6817.20" />
+              <option name="productionCode" value="PS" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1571904230423" />
+              <option name="buildTimestamp" value="1569407446027" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/LAB/projects/phpstorm/hello">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PS-192.6817.20" />
+              <option name="productionCode" value="PS" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1569676910293" />
+              <option name="buildTimestamp" value="1569407441451" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="/LAB/projects/phpstorm" />
+  </component>
+</application>

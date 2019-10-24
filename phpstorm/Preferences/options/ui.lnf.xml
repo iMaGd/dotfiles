@@ -1,0 +1,8 @@
+<application>
+  <component name="UISettings">
+    <option name="HIDE_TOOL_STRIPES" value="true" />
+    <option name="OVERRIDE_NONIDEA_LAF_FONTS" value="true" />
+    <option name="PRESENTATION_MODE_FONT_SIZE" value="14" />
+    <option name="showTreeIndentGuides" value="true" />
+  </component>
+</application>
