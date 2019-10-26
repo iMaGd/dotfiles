@@ -43,7 +43,7 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-brew install php php@7.1
+brew install php@7.1 php@7.2 php
 brew install gmp
 
 # =============================================
