@@ -4,6 +4,13 @@ echo '* Installing PHP developments tools..';
 brew install composer
 brew upgrade composer
 
+# Lets install deprecated version of PHP as well
+brew tap exolnet/homebrew-deprecated
+brew install php@5.6
+brew install php@7.1
+brew install php@7.2
+brew install php@7.3
+
 # Install mysql
 brew install mysql mariadb
 
