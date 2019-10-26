@@ -46,6 +46,9 @@ brew install screen
 brew install php@7.1 php@7.2 php
 brew install gmp
 
+# Catalina required libraries
+brew install openldap libiconv
+
 # =============================================
 
 # Better alternative for spotlight
