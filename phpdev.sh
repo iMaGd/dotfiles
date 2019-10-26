@@ -14,6 +14,10 @@ brew install php@7.3
 # Install mysql
 brew install mysql mariadb
 
+# Remove Apple pre-installed apache  
+sudo apachectl stop
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+
 # Install apache - nano /etc/apache2/httpd.conf
 brew install httpd
 
