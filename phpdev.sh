@@ -25,7 +25,7 @@ brew install httpd
 brew install nginx
 
 # Install Local by Flywheel
-brew install local
+brew cask install local
 
 # Install WordPress command tools
 brew install wp-cli wpscan
@@ -35,6 +35,9 @@ brew install phpmyadmin
 
 # Install Sequel Pro - database management application
 brew cask install sequel-pro
+
+# Host file manager
+brew cask install gas-mask
 
 # Install PHP IDE
 brew cask install phpstorm
