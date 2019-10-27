@@ -1,2 +1,0 @@
-com.jetbrains.php.drupal
-com.xinkun.theme.md
