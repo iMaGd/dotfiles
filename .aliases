@@ -1,4 +1,3 @@
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -13,6 +12,7 @@ alias dl="cd ~/Downloads"
 alias desk="cd ~/Desktop"
 alias g="git"
 
+# Brew
 alias cask='brew cask' # i <3 u cask
 alias where=which # sometimes i forget
 alias brwe=brew  #typos
@@ -61,7 +61,6 @@ alias ports='netstat -tulanp'
 alias tree="find . -print | sed -e 's;[^/]*/;|--;g;s;--|;   |;g'"
 
 
-
 alias o="open"
 alias oo="open ."
 
@@ -70,12 +69,9 @@ alias oo="open ."
 alias cpu="( sysctl -a | grep machdep.cpu ) && (system_profiler | grep Processor)"
 
 
-
 # Applications ------------------------------------------
-alias xcode="open -a '/Applications/XCode.app'"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
-
 
 
 # Enable aliases to be sudo’ed
@@ -93,19 +89,8 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 
 # IP addresses ----------------------------------------------------------
 
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-# Enhanced WHOIS lookups
-alias whois="whois -h whois-servers.net"
-
-
-
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
@@ -120,10 +105,6 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 # OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-# JavaScriptCore REPL
-jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
@@ -200,20 +181,21 @@ alias ga="git add "
 alias gb="git branch"
 alias gbl="git branch --list"
 alias gd="git diff "
-alias gdw="git diff --word-diff"
-alias gl="log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(reset) %C(bold)(%ar)%C(reset) by %C(bold)%an%C(reset) in%C(yellow)%d%C(reset)%n''          %C(green)%s%C(reset)' --all"
-alias gl1="git log --pretty=oneline -n 20 --graph --abbrev-commit"
-alias gl2="log --abbrev-commit --date=relative -n 20 --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)"
-alias gl3="git log --abbrev-commit --date=relative --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)'"
-alias gl4="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias gl5="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+alias gl="git log --graph --abbrev-commit --date=relative --format=format:'%C(yellow)%h%C(reset) - %C(blue)%cr%C(reset): %C(green)%s%C(reset) by %an%C(reset)%C(bold yellow)%d%C(reset)'"
+
+alias gla="git log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(reset) %C(bold)(%ar)%C(reset) by %C(bold)%an%C(reset) in%C(yellow)%d%C(reset)%n''          %C(green)%s%C(reset)' --all"
+
+alias gll="git log --abbrev-commit --date=relative --format=format:' - %C(yellow)%h%C(reset) - %C(blue)%cr%C(reset): %C(green)%s%C(reset) by %an%C(reset)%C(bold yellow)%d%C(reset)'"
+
+alias gl2="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
 alias undopush="git push -f origin HEAD^:master"
-alias undo="git reset --soft HEAD^"
 alias gdev="git checkout develop"
 alias gmas="git checkout master"
-alias gcam="git commit -a -m"
-alias gcm="git commit -m"
 alias gc="git commit"
+alias gcm="git commit -m"
+alias gcam="git commit -a -m"
 alias gch="git checkout"
 
 # Remove all remote merged branches except 'origin/master' and 'origin/develop' branches
