@@ -196,6 +196,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 
 # git alises ------------------------------------------------------------
 alias gs="git status"
+alias ga="git add "
 alias gb="git branch"
 alias gbl="git branch --list"
 alias gd="git diff "
