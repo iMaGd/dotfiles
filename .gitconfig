@@ -69,7 +69,7 @@
 
     # Undo your last commit, but don't throw away your changes
     undo = reset --soft HEAD^
-    
+
     # Remove all remote merged branches except 'origin/master' and 'origin/develop' branches
     rubr = "git branch -r --merged develop | grep -v origin/develop | grep -v origin/master | cut -d/ -f2- | xargs -n 1 git push --delete origin"
     # Remove all local merged branches except 'master' and 'develop' branches
@@ -107,12 +107,22 @@
     # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
     whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-    # insanely beautiful diffs
-    pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
-
-    # Make `git rebase` safer on OS X
+    # Make `git rebase` safer on macOS
     # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
     trustctime = false
+
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
+
+    # Speed up commands involving untracked files such as `git status`.
+    # https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
+
+[pager]
+    # insanely beautiful diffs ==> npm install -g diff-so-fancy
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
 
@@ -156,6 +166,11 @@
     # Detect copies as well as renames
     renames = copies
 
+[diff "bin"]
+
+    # Use `hexdump` to diff binary files
+    textconv = hexdump -v -C
+
 [help]
 
     # Automatically correct and execute mistyped commands
@@ -165,34 +180,23 @@
 
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-    tool = opendiff
 
 [push]
 
-    # Use the Git 1.x.x default to avoid errors on machines with old Git
-    # installations. To use `simple` instead, add this to your `~/.extra` file:
-    # `git config --global push.default simple`. See http://git.io/mMah-w.
-    default = matching
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
+    default = simple
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
 
 # URL shorthands
 
 [url "git@github.com:"]
 
     insteadOf = "gh:"
-    insteadOf = "git://github.com"
     pushInsteadOf = "github:"
     pushInsteadOf = "git://github.com/"
-    pushInsteadOf = "https://github.com/"
 
 
-[url "git@gist.github.com:"]
+[url "git://github.com/"]
 
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-    pushInsteadOf = "https://gist.github.com/"
-
-# Any GitHub repo with my username should be checked out r/w by default
-
-[url "git@github.com:M4Gd/"]
-  insteadOf = "git://github.com/M4Gd/"
+    insteadOf = "github:"
