@@ -224,115 +224,6 @@ function changelogs(){
   git log $1..HEAD --pretty=format:'- %s'
 }
 
-function build_git(){
-  DIRNAME=${PWD};
-  FOLDERNAME=${PWD##*/};
-  if [ -d ~/Desktop/$FOLDERNAME ]; then
-    if [ "$1" == "-i" ]; then
-      echo "Build folder already exists!";
-      rm -rf ~/Desktop/$FOLDERNAME;
-      rm -rf ~/Desktop/$FOLDERNAME.zip;
-      echo "Previous build folder removed.";
-    else
-      echo "Build folder already exists!";
-      return 0;
-    fi;
-  fi;
-  if [ -d ~/Desktop/$FOLDERNAME-installable.zip ]; then
-    if [ "$1" == "-i" ]; then
-      echo "Build archive file already exists!";
-      rm -rf ~/Desktop/$FOLDERNAME-installable.zip;
-      echo "Previous build archive file removed.";
-    fi;
-  fi;
-  cp -r $DIRNAME ~/Desktop/$FOLDERNAME;
-  echo "Building started ..";
-  cd ~/Desktop/$FOLDERNAME;
-  echo "Project cloned ..";
-  find . -name '*.DS_Store' -type f -delete;
-  echo ".DS_Store files cleared ..";
-  rm -rf .git;
-  echo "Git history cleared ..";
-  rm -f deploy.sh;
-  echo "deploy.sh file removed ..";
-
-  cd ~/Desktop;
-  if [ "$1" == "-i" ]; then
-    echo "Creating archive file ..";
-    zip -r $FOLDERNAME-installable.zip $FOLDERNAME;
-    echo $FOLDERNAME-installable.zip created sucessfully!;
-    rm -rf $FOLDERNAME;
-  else
-    echo "Creating archive file ..";
-    zip -r $FOLDERNAME.zip $FOLDERNAME;
-    echo $FOLDERNAME.zip created sucessfully!;
-  fi;
-  echo "built sucessfully done!";
-  cd $DIRNAME
-}
-
-
-# Open prject if exists
-function pro(){
-
-    if [ -d "/LAB/projects/wp/plugins/$1" ]; then
-        cd "/LAB/projects/wp/plugins/$1";
-        if [ "$2" == "o" ]; then
-            open .;
-        fi;
-        if [ "$2" == "s" ]; then
-            open .;
-        fi;
-        return 0;
-    fi;
-
-    if [ -d "/LAB/projects/wp/themes/$1" ]; then
-        cd "/LAB/projects/wp/themes/$1";
-        if [ "$2" == "o" ]; then
-            open .;
-        fi;
-        if [ "$2" == "s" ]; then
-            open .;
-        fi;
-        return 0;
-    fi;
-
-    if [ -d "/LAB/projects/$1" ]; then
-        cd "/LAB/projects/$1";
-        if [ "$2" == "o" ]; then
-            open .;
-        fi;
-        if [ "$2" == "s" ]; then
-            open .;
-        fi;
-        return 0;
-    fi;
-}
-
-function plugin(){
-  plugins && cd "$1";
-
-  if [ "$2" == "--o" ]; then
-    open .;
-  fi;
-
-  if [ "$2" == "subl" ]; then
-    subl .;
-  fi;
-}
-
-function theme(){
-  themes && cd "$1";
-
-  if [ "$2" == "--o" ]; then
-    open .;
-  fi;
-
-  if [ "$2" == "subl" ]; then
-    subl .;
-  fi;
-}
-
 
 # Create and switch to <new directory>
 md ()
@@ -424,20 +315,7 @@ gclone ()
     fi;
 }
 
-
-function strip_diff_leading_symbols(){
-   color_code_regex="(\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])"
-
-   # simplify the unified patch diff header
-   sed -r "s/^($color_code_regex)diff --git .*$//g" | \
-       sed -r "s/^($color_code_regex)index .*$/\n\1$(rule)/g" | \
-       sed -r "s/^($color_code_regex)\+\+\+(.*)$/\1+++\5\n\1$(rule)\x1B\[m/g" |\
-
-   # actually strips the leading symbols
-       sed -r "s/^($color_code_regex)[\+\-]/\1 /g"
-}
-
 ## Print a horizontal rule
-rule () {
+hr () {
    printf "%$(tput cols)s\n"|tr " " "─"}}
 }

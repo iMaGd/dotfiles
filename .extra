@@ -12,10 +12,39 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 ###############################################################################
 
 # custom directories ----------------------------------------------------------
-alias plugins="cd ~/projects/WordPress/plugins"
-alias themes="cd ~/projects/WordPress/themes"
+alias plugins="cd ~/projects/wp/plugins"
+alias themes="cd ~/projects/wp/themes"
 
 # directory for cloned repos
 alias clones="cd ~/projects/clones"
 
 alias storm="cd ~/projects/pstorm"
+
+
+function project(){
+
+    if [ -d ~/projects/wp/plugins/$1 ]; then
+        cd ~/projects/wp/plugins/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+	if [ -d ~/projects/wp/themes/$1 ]; then
+        cd ~/projects/wp/themes/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+	if [ -d ~/projects/clones/$1 ]; then
+        cd ~/projects/clones/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+	if [ -d ~/projects/pstorm/$1 ]; then
+        cd ~/projects/pstorm/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+}
