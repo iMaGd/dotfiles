@@ -8,10 +8,14 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias db="cd ~/Documents/Dropbox"
+alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias desk="cd ~/Desktop"
 alias g="git"
+
+alias cask='brew cask' # i <3 u cask
+alias where=which # sometimes i forget
+alias brwe=brew  #typos
 
 
 # Detect which `ls` flavor is in use
@@ -39,7 +43,7 @@ alias l.='ls -d .*'
 alias ll="ls -l"
 
 
-
+alias fs="stat -f \"%z bytes\""
 alias size='du -sh .'
 alias sizes='du -sh --max-depth=1'
 alias sizel='du -sch /*'
@@ -71,7 +75,6 @@ alias cpu="( sysctl -a | grep machdep.cpu ) && (system_profiler | grep Processor
 alias xcode="open -a '/Applications/XCode.app'"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
-alias mysql="/Applications/MAMP/Library/bin/mysql"
 
 
 
@@ -217,10 +220,7 @@ grubr="git branch -r --merged develop | grep -v origin/develop | grep -v origin/
 # Remove all local merged branches except 'master' and 'develop' branches
 grub="git branch --merged develop | grep -v develop | grep -v master | xargs -n 1 git branch -d"
 
-# web server aliases ----------------------------------------------------
-alias amppsStart="sudo /Applications/AMPPS/apache/bin/httpd -k start"
-alias amppsStop="sudo /Applications/AMPPS/apache/bin/httpd -k stop"
-alias amppsRestart="sudo /Applications/AMPPS/apache/bin/httpd -k restart"
-
-
-
+# ----------------------------------------------------------------
+# Update installed Ruby gems, Homebrew, npm, and their installed packages
+alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm-check -g -u"
+alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update --no-document'
