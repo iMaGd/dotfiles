@@ -16,6 +16,8 @@ npm install -g typescript
 npm install -g browserify
 npm install -g csslint
 npm install -g jshint
+npm install -g diff-so-fancy
+npm install -g trash-cli
 
 # Gem packages
 gem install compass
