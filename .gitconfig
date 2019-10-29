@@ -43,6 +43,12 @@
     # Amend the currently staged files to the latest commit
     amend = commit --amend --reuse-message=HEAD
 
+    # Amend the currently staged files
+    edit = commit --amend -m
+
+    # Remove files from git staging area
+    unstage = git reset HEAD --
+
     # Credit an author on the latest commit
     credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 
@@ -70,6 +76,7 @@
 
     # Undo your last commit, but don't throw away your changes
     undo = reset --soft HEAD^
+    uncommit = reset --soft HEAD^
 
     # Remove all remote merged branches except 'origin/master' and 'origin/develop' branches
     rubr = "git branch -r --merged develop | grep -v origin/develop | grep -v origin/master | cut -d/ -f2- | xargs -n 1 git push --delete origin"
@@ -132,9 +139,13 @@
 [color "diff"]
 
     meta = yellow bold
-    frag = magenta bold # line info
-    old = red # deletions
-    new = green # additions
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+    newMoved = cyan
+    oldMoved = blue
 
 [color "status"]
 
@@ -143,6 +154,7 @@
     untracked = cyan
 
 [color "diff-highlight"]
+
     oldNormal = "red bold"
     oldHighlight = "red bold 52"
     newNormal = "green bold"
@@ -158,6 +170,7 @@
 
     # Detect copies as well as renames
     renames = copies
+
 
 [help]
 
