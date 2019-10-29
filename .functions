@@ -103,14 +103,6 @@ function server() {
     python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-    local port="${1:-4000}";
-    local ip=$(ipconfig getifaddr en1);
-    sleep 1 && open "http://${ip}:${port}/" &
-    php -S "${ip}:${port}";
-}
 
 # Compare original and gzipped file size
 function gz() {
@@ -131,11 +123,6 @@ function json() {
     else # pipe
         python -mjson.tool | pygmentize -l javascript;
     fi;
-}
-
-# Run `dig` and display the most useful info
-function digga() {
-    dig +nocmd "$1" any +multiline +noall +answer;
 }
 
 # UTF-8-encode a string of Unicode symbols
@@ -209,16 +196,6 @@ function s() {
     fi;
 }
 
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-function a() {
-    if [ $# -eq 0 ]; then
-        atom .;
-    else
-        atom "$@";
-    fi;
-}
-
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
@@ -229,15 +206,6 @@ function v() {
     fi;
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
-function o() {
-    if [ $# -eq 0 ]; then
-        open .;
-    else
-        open "$@";
-    fi;
-}
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
@@ -254,44 +222,6 @@ function tre() {
 # shell fuctions --------------------------------------------------------
 function changelogs(){
   git log $1..HEAD --pretty=format:'- %s'
-}
-
-# custom build commands ---
-function build_theme(){
-  DIRNAME=${PWD};
-  FOLDERNAME=${PWD##*/};
-  if [ -d ~/Desktop/$FOLDERNAME ]; then
-
-    if [ "$1" == "-i" ]; then
-      echo "Build folder already exists!";
-      rm -rf ~/Desktop/$FOLDERNAME;
-      rm -rf ~/Desktop/$FOLDERNAME.zip;
-      echo "Previous build folder removed.";
-    else
-      echo "Build folder already exists!";
-      return 0;
-    fi;
-
-  fi;
-  rsync -av --exclude='.sass-cache' --exclude='_devDependencies' --exclude='node_modules' --exclude='.git' --exclude='css/sass' --exclude='css/sass-output' $DIRNAME/ ~/Desktop/$FOLDERNAME;
-
-  echo "Building started ..";
-  cd ~/Desktop/$FOLDERNAME;
-  echo "Project cloned ..";
-  find . -name '*.DS_Store' -type f -delete;
-  echo ".DS_Store files cleared ..";
-  rm -rf .*;
-  rm -rf languages/fa_IR.po;
-  rm -rf languages/fa_IR.mo;
-  rm -rf css/rtl.css;
-  rm -rf *.json;
-  rm -rf Gruntfile.js;
-
-  echo "built sucessfully done!";
-  cd ~/Desktop;
-  zip -r $FOLDERNAME.zip $FOLDERNAME;
-  echo $FOLDERNAME.zip created sucessfully!;
-  cd $DIRNAME;
 }
 
 function build_git(){
@@ -460,134 +390,6 @@ extract () {
         fi
 }
 
-
-
-z() {
- local datafile="$HOME/.z"
- if [ "$1" = "--add" ]; then
-  # add
-  shift
-  # $HOME isn't worth matching
-  [ "$*" = "$HOME" ] && return
-  awk -v p="$*" -v t="$(date +%s)" -F"|" '
-   BEGIN { rank[p] = 1; time[p] = t }
-   $2 >= 1 {
-    if( $1 == p ) {
-     rank[$1] = $2 + 1
-     time[$1] = t
-    } else {
-     rank[$1] = $2
-     time[$1] = $3
-    }
-    count += $2
-   }
-   END {
-    if( count > 1000 ) {
-     for( i in rank ) print i "|" 0.9*rank[i] "|" time[i] # aging
-    } else for( i in rank ) print i "|" rank[i] "|" time[i]
-   }
-  ' "$datafile" 2>/dev/null > "$datafile.tmp"
-  mv -f "$datafile.tmp" "$datafile"
- elif [ "$1" = "--complete" ]; then
-  # tab completion
-  awk -v q="$2" -F"|" '
-   BEGIN {
-    if( q == tolower(q) ) nocase = 1
-    split(substr(q,3),fnd," ")
-   }
-   {
-    if( system("test -d \"" $1 "\"") ) next
-    if( nocase ) {
-     for( i in fnd ) tolower($1) !~ tolower(fnd[i]) && $1 = ""
-     if( $1 ) print $1
-    } else {
-     for( i in fnd ) $1 !~ fnd[i] && $1 = ""
-     if( $1 ) print $1
-    }
-   }
-  ' "$datafile" 2>/dev/null
- else
-  # list/go
-  while [ "$1" ]; do case "$1" in
-   -h) echo "z [-h][-l][-r][-t] args" >&2; return;;
-   -l) local list=1;;
-   -r) local typ="rank";;
-   -t) local typ="recent";;
-   --) while [ "$1" ]; do shift; local fnd="$fnd $1";done;;
-    *) local fnd="$fnd $1";;
-  esac; local last=$1; shift; done
-  [ "$fnd" ] || local list=1
-  # if we hit enter on a completion just go there
-  [ -d "$last" ] && cd "$last" && return
-  [ -f "$datafile" ] || return
-  local cd="$(awk -v t="$(date +%s)" -v list="$list" -v typ="$typ" -v q="$fnd" -v tmpfl="$datafile.tmp" -F"|" '
-   function frecent(rank, time) {
-    dx = t-time
-    if( dx < 3600 ) return rank*4
-    if( dx < 86400 ) return rank*2
-    if( dx < 604800 ) return rank/2
-    return rank/4
-   }
-   function output(files, toopen, override) {
-    if( list ) {
-     if( typ == "recent" ) {
-      cmd = "sort -nr >&2"
-     } else cmd = "sort -n >&2"
-     for( i in files ) if( files[i] ) printf "%-10s %s\n", files[i], i | cmd
-     if( override ) printf "%-10s %s\n", "common:", override > "/dev/stderr"
-    } else {
-     if( override ) toopen = override
-     print toopen
-    }
-   }
-   function common(matches, fnd, nc) {
-    for( i in matches ) {
-     if( matches[i] && (!short || length(i) < length(short)) ) short = i
-    }
-    if( short == "/" ) return
-    for( i in matches ) if( matches[i] && i !~ short ) x = 1
-    if( x ) return
-    if( nc ) {
-     for( i in fnd ) if( tolower(short) !~ tolower(fnd[i]) ) x = 1
-    } else for( i in fnd ) if( short !~ fnd[i] ) x = 1
-    if( !x ) return short
-   }
-   BEGIN { split(q, a, " ") }
-   {
-    if( system("test -d \"" $1 "\"") ) next
-    print $0 >> tmpfl
-    if( typ == "rank" ) {
-     f = $2
-    } else if( typ == "recent" ) {
-     f = t-$3
-    } else f = frecent($2, $3)
-    wcase[$1] = nocase[$1] = f
-    for( i in a ) {
-     if( $1 !~ a[i] ) delete wcase[$1]
-     if( tolower($1) !~ tolower(a[i]) ) delete nocase[$1]
-    }
-    if( wcase[$1] > oldf ) {
-     cx = $1
-     oldf = wcase[$1]
-    } else if( nocase[$1] > noldf ) {
-     ncx = $1
-     noldf = nocase[$1]
-    }
-   }
-   END {
-    if( cx ) {
-     output(wcase, cx, common(wcase, a, 0))
-    } else if( ncx ) output(nocase, ncx, common(nocase, a, 1))
-   }
-  ' "$datafile")"
-  if [ $? -gt 0 ]; then
-   rm -f "$datafile.tmp"
-  else
-   mv -f "$datafile.tmp" "$datafile"
-   [ "$cd" ] && cd "$cd"
-  fi
- fi
-}
 
 gclone ()
 {
