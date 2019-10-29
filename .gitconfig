@@ -1,12 +1,9 @@
 [alias]
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
-    l  = log --abbrev-commit --date=relative -n 20 --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)'
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(green)%s%C(reset) %C(reset) %C(blue)(%ar)%C(reset) <%C(bold)%an%C(reset)> %C(yellow)%d%C(reset)' --all
 
-    l2 = log --pretty=oneline -n 20 --graph --abbrev-commit
-
-    lg  = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(reset) %C(bold)(%ar)%C(reset) by %C(bold)%an%C(reset) in%C(yellow)%d%C(reset)%n''          %C(green)%s%C(reset)' --all
-    ls = log --abbrev-commit --date=relative --format=format:' > %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %an %C(blue)%cr%C(reset): %C(green)%s%C(reset)'
+    ll = log --abbrev-commit --date=relative --decorate --format=format:'%C(red)%h%C(reset) - %C(bold)%an%C(reset) %C(yellow)%d%C(reset) %C(green)%s%C(reset) %C(reset) %C(blue)(%ar)%C(reset)' --all
 
     # View the current working tree status using the short format
     s = status -s
@@ -47,7 +44,7 @@
     edit = commit --amend -m
 
     # Remove files from git staging area
-    unstage = git reset HEAD --
+    unstage = git reset HEAD
 
     # Credit an author on the latest commit
     credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
