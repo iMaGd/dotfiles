@@ -133,16 +133,6 @@
     local = yellow
     remote = green
 
-[color "diff"]
-
-    meta = yellow bold
-	commit = green bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-    newMoved = cyan
-    oldMoved = blue
 
 [color "status"]
 
@@ -150,12 +140,6 @@
     changed = green
     untracked = cyan
 
-[color "diff-highlight"]
-
-    oldNormal = "red bold"
-    oldHighlight = "red bold 52"
-    newNormal = "green bold"
-    newHighlight = "green bold 22"
 
 [color "status"]
 
