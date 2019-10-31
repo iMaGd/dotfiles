@@ -106,6 +106,7 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.colorTheme": "Plastic",
     "workbench.iconTheme": "ayu",
+    "workbench.tree.indent": 25,
 
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#FDCC72",
