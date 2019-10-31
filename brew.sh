@@ -56,7 +56,8 @@ brew cask install alfred
 
 # libraries to manipulate media
 brew install imagemagick --with-webp
-brew install ffmpeg tree
+brew install ffmpeg tree rename
+
 
 # Add a public key to a remote machine authorized_keys file
 brew install ssh-copy-id sshpass
@@ -83,9 +84,6 @@ brew install python
 # Compare files and folders using simple, powerful commands
 brew cask install beyond-compare
 
-# a tiny menu bar calendar
-brew cask install itsycal
-
 # Move and resize windows
 brew cask install spectacle
 
@@ -103,6 +101,10 @@ brew cask install discord telegram skype teamspeak-client teamviewer
 
 # Share apps
 brew cask install dropbox evernote
+
+# Image optimization
+brew cask install imagealpha
+brew cask install imageoptim
 
 # Security apps
 brew cask install macpass
