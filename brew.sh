@@ -132,6 +132,9 @@ brew cask install moom vnc-viewer whatpulse
 brew cask install transmit free-download-manager
 brew cask install cyberduck
 
+# Downloader
+brew cask install progressive-downloader folx
+
 # Simple and visually-pleasing Pomodoro timer
 brew cask install pomotroid
 
