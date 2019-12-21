@@ -15,6 +15,7 @@ BREW_PREFIX=$(brew --prefix)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+ln -s bin/sphp "${BREW_PREFIX}/bin/sphp"
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
@@ -137,6 +138,9 @@ brew cask install pomotroid
 # Torrent
 brew cask install qBittorrent
 
+# A tiny menu bar calendar
+brew cask install Itsycal
+
 # Youtube downloader
 brew install youtube-dl
 
@@ -151,8 +155,8 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize su
 
 # Install fonts
 brew tap homebrew/cask-fonts
-brew cask install font-droidsansmono-nerd-font-mono
 brew cask install font-fira-code font-courier-new
+brew cask install font-droidsansmono-nerd-font-mono
 
 # Cross-platform monitoring tool
 brew install glances
