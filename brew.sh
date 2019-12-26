@@ -129,8 +129,7 @@ brew cask install pixel-picker
 brew cask install moom vnc-viewer whatpulse
 
 # File transfer apps
-brew cask install transmit free-download-manager
-brew cask install cyberduck
+brew cask install transmit cyberduck
 
 # Downloader
 brew cask install progressive-downloader folx
@@ -140,6 +139,9 @@ brew cask install pomotroid
 
 # Torrent
 brew cask install qBittorrent
+
+# Open client for Cisco AnyConnect
+brew install openconnect
 
 # A tiny menu bar calendar
 brew cask install Itsycal
