@@ -11,7 +11,7 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 # Custom alias                                                       #
 ###############################################################################
 
-# custom directories ----------------------------------------------------------
+# custom directories ----------------
 alias plugins="cd ~/projects/wp/plugins"
 alias themes="cd ~/projects/wp/themes"
 
@@ -19,3 +19,38 @@ alias themes="cd ~/projects/wp/themes"
 alias clones="cd ~/projects/clones"
 
 alias storm="cd ~/projects/pstorm"
+
+
+# Quick SSH connect ---------------
+
+function connect(){
+
+    if [ $1 == "accountName" ]; then
+        ssh root@domainOrIP -p 80;
+        return 0;
+    fi;
+
+}
+
+# Quick switch to project ---------
+
+function pro(){
+
+    if [ -f ~/projects/workspace/$1.code-workspace ]; then
+        open ~/projects/workspace/$1.code-workspace;
+        echo "Switched to [${PWD}]";
+    fi;
+
+	if [ -d ~/projects/clones/$1 ]; then
+        cd ~/projects/clones/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+	if [ -d ~/projects/pstorm/$1 ]; then
+        cd ~/projects/pstorm/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+}
