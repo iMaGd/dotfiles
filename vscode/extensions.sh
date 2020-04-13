@@ -1,4 +1,3 @@
-code --install-extension Kasik96.format-indent
 code --install-extension aaron-bond.better-comments
 code --install-extension akamud.vscode-javascript-snippet-pack
 code --install-extension akamud.vscode-theme-onedark
@@ -22,12 +21,9 @@ code --install-extension dzgmelody.vscode-changelog-snippets
 code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
 code --install-extension felixfbecker.php-debug
-code --install-extension felixfbecker.php-intellisense
-code --install-extension felixfbecker.php-pack
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension humao.rest-client
-code --install-extension HvyIndustries.crane
 code --install-extension ikappas.phpcs
 code --install-extension kamikillerto.vscode-colorize
 code --install-extension kokororin.vscode-phpfmt
@@ -35,6 +31,7 @@ code --install-extension marabesi.php-import-checker
 code --install-extension MehediDracula.php-namespace-resolver
 code --install-extension mrmlnc.vscode-scss
 code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-mssql.mssql
 code --install-extension ms-python.python
 code --install-extension ms-vscode.sublime-keybindings
 code --install-extension ms-vsliveshare.vsliveshare
@@ -45,7 +42,6 @@ code --install-extension PKief.material-icon-theme
 code --install-extension pnp.polacode
 code --install-extension pranaygp.vscode-css-peek
 code --install-extension ritwickdey.LiveServer
-code --install-extension robinbentley.sass-indented
 code --install-extension sandy081.todotasks
 code --install-extension sburg.vscode-javascript-booster
 code --install-extension Shan.code-settings-sync
@@ -56,13 +52,13 @@ code --install-extension spikespaz.vscode-smoothtype
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension teabyii.ayu
 code --install-extension TheNouillet.symfony-vscode
-code --install-extension tungvn.wordpress-snippet
 code --install-extension Tyriar.terminal-tabs
 code --install-extension vincaslt.highlight-matching-tag
 code --install-extension will-stone.plastic
+code --install-extension wongjn.php-sniffer
 code --install-extension wordpresstoolbox.wordpress-toolbox
 code --install-extension wwm.better-align
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension Yish.php-snippets-for-vscode
 code --install-extension yogensia.searchwpdocs
-code --install-extension zhuangtongfa.Material-theme
+code --install-extension zhuangtongfa.material-theme
