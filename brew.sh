@@ -113,8 +113,11 @@ brew cask install macpass
 # Network apps
 brew cask install secure-pipes
 
+# Music apps
+brew cask install spotify
+
 # Media apps
-brew cask install spotify vlc
+brew cask install elmedia-player iina
 
 # Video editing
 brew cask install quik
