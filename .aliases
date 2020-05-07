@@ -48,6 +48,8 @@ alias size='du -sh .'
 alias sizes='du -sh --max-depth=1'
 alias sizel='du -sch /*'
 
+alias jpg='jpegoptim'
+alias png='optipng'
 
 alias c='pygmentize -O style=monokai -f console256 -g'
 # Empty the Trash on all mounted volumes and the main HDD

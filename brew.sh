@@ -104,8 +104,8 @@ brew cask install discord telegram skype teamspeak-client teamviewer
 brew cask install dropbox evernote
 
 # Image optimization
-brew cask install imagealpha
-brew cask install imageoptim
+brew cask install imageoptim imagealpha
+brew install jpegoptim optipng
 
 # Security apps
 brew cask install macpass
