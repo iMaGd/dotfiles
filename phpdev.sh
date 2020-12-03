@@ -14,7 +14,7 @@ brew install php@7.3
 # Install mysql
 brew install mysql mariadb
 
-# Remove Apple pre-installed apache  
+# Remove Apple pre-installed apache
 sudo apachectl stop
 sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
 
@@ -29,6 +29,9 @@ brew cask install local
 
 # Install WordPress command tools
 brew install wp-cli wpscan
+
+# Install Network tools
+brew install htop
 
 # Web interface for MySQL and MariaDB
 brew install phpmyadmin
