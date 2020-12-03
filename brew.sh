@@ -98,7 +98,8 @@ brew cask install opera brave-browser
 brew cask install iterm2 visual-studio-code sublime-text poedit
 
 # Communication apps
-brew cask install discord telegram skype teamspeak-client teamviewer anydesk
+brew cask install discord telegram skype microsoft-teams
+brew cask install teamspeak-client teamviewer anydesk
 
 # Share apps
 brew cask install dropbox evernote
