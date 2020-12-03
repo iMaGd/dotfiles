@@ -98,7 +98,7 @@ brew cask install opera brave-browser
 brew cask install iterm2 visual-studio-code sublime-text poedit
 
 # Communication apps
-brew cask install discord telegram skype teamspeak-client teamviewer
+brew cask install discord telegram skype teamspeak-client teamviewer anydesk
 
 # Share apps
 brew cask install dropbox evernote
@@ -132,7 +132,7 @@ brew cask install pixel-picker
 brew cask install moom vnc-viewer whatpulse
 
 # File transfer apps
-brew cask install transmit cyberduck
+brew cask install transmit cyberduck android-file-transfer
 
 # Downloader
 brew cask install progressive-downloader folx
