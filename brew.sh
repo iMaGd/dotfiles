@@ -67,6 +67,9 @@ brew install ssh-copy-id sshpass
 brew cask install rar keka
 # brew install unrar pigz
 
+# SVN
+brew install svn
+
 # Git
 brew install git git-lfs git-extras git-quick-stats
 
