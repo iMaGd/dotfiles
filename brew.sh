@@ -114,6 +114,9 @@ brew install jpegoptim optipng
 # Security apps
 brew cask install macpass
 
+# Network
+brew install speedtest-cli
+
 # Network apps
 brew cask install secure-pipes
 
