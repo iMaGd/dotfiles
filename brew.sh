@@ -136,7 +136,7 @@ brew cask install fliqlo
 brew cask install pixel-picker
 
 # Extra apps
-brew cask install moom vnc-viewer whatpulse
+brew cask install moom vnc-viewer tigervnc-viewer
 
 # File transfer apps
 brew cask install transmit cyberduck android-file-transfer
