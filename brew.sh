@@ -44,7 +44,7 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-brew install php@7.1 php@7.2 php@7.4 php
+brew install php@7.3 php@7.4 php
 brew install gmp
 
 # Catalina required libraries
@@ -174,7 +174,7 @@ brew cask install font-fira-code font-courier-new
 brew cask install font-droidsansmono-nerd-font-mono
 
 # Cross-platform monitoring tool
-brew install glances
+brew install glances progress
 
 # Update gem
 gem update --system
