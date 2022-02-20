@@ -36,8 +36,8 @@ brew install htop
 # Web interface for MySQL and MariaDB
 brew install phpmyadmin
 
-# Install Sequel Pro - database management application
-brew cask install sequel-pro
+# Install database management application
+brew cask install sequel-pro beekeeper-studio
 
 # Host file manager
 brew cask install gas-mask
