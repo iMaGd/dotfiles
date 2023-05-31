@@ -113,7 +113,7 @@ brew cask install macpass
 brew install speedtest-cli
 
 # Network apps
-brew cask install secure-pipes
+brew install secure-pipes --cask
 
 # Music apps
 brew cask install spotify
@@ -121,29 +121,26 @@ brew cask install spotify
 # Media apps
 brew cask install elmedia-player iina
 
-# Video editing
-brew cask install quik
-
 # Flip clock screem saver
-brew cask install fliqlo
+brew install fliqlo --cask
 
 # Color picker
-brew cask install pixel-picker
+brew install pixel-picker --cask
 
 # Extra apps
-brew cask install moom vnc-viewer tigervnc-viewer
+brew install moom vnc-viewer tigervnc-viewer --cask
 
 # File transfer apps
-brew cask install transmit cyberduck android-file-transfer
+brew install transmit cyberduck android-file-transfer --cask
 
 # Downloader
-brew cask install progressive-downloader folx
+brew install progressive-downloader folx --cask
 
 # Simple and visually-pleasing Pomodoro timer
 brew cask install pomotroid
 
 # Torrent
-brew cask install qBittorrent
+brew install qBittorrent --cask
 
 # Open client for Cisco AnyConnect
 brew install openconnect
