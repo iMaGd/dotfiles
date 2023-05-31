@@ -19,19 +19,14 @@ ln -s bin/sphp "${BREW_PREFIX}/bin/sphp"
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+
 # Install a modern version of Bash.
 brew install bash
-brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
-if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
-fi;
+sudo bash -c "echo $(brew --prefix)/bin/bash >> /etc/shells"
+chsh -s $(brew --prefix)/bin/bash
+ln -s $(brew --prefix)/bin/bash /usr/local/bin/bash-terminal-app
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -86,26 +81,26 @@ brew install rsync
 brew install python
 
 # Compare files and folders using simple, powerful commands
-brew cask install beyond-compare
+brew install beyond-compare --cask
 
 # Move and resize windows
-brew cask install spectacle
+brew install spectacle --cask
 
 # Install Chrome & Firefox
-brew cask install google-chrome firefox
+brew install google-chrome firefox --cask
 
 # Opera and Brave browsers
-brew cask install opera brave-browser
+brew install opera brave-browser --cask
 
 # Development general tools
-brew cask install iterm2 visual-studio-code sublime-text poedit postman
+brew install iterm2 visual-studio-code sublime-text poedit postman --cask
 
 # Communication apps
-brew cask install discord telegram skype microsoft-teams
-brew cask install teamspeak-client teamviewer anydesk
+brew install discord telegram skype microsoft-teams --cask
+brew install teamspeak-client teamviewer anydesk --cask
 
 # Share apps
-brew cask install dropbox evernote
+brew install dropbox evernote --cask
 
 # Image optimization
 brew cask install imageoptim imagealpha
