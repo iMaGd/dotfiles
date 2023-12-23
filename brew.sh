@@ -98,7 +98,8 @@ brew cask install google-chrome firefox
 brew cask install opera brave-browser
 
 # Development general tools
-brew cask install iterm2 visual-studio-code sublime-text poedit postman
+brew install --cask warp iterm2
+brew install --cask visual-studio-code poedit postman
 
 # Communication apps
 brew cask install discord telegram skype microsoft-teams
