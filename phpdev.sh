@@ -45,5 +45,8 @@ brew cask install gas-mask
 # Install PHP IDE
 brew cask install phpstorm
 
+# Install Database tool
+brew install --cask dbngin
+
 #
 composer global require squizlabs/php_codesniffer
