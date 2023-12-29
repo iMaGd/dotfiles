@@ -1,9 +1,9 @@
 # Git credentials
 # Change following credentials to prevent from accidentally committing under my name
-GIT_AUTHOR_NAME="Majid"
+GIT_AUTHOR_NAME="YourName"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="mj_azani@hotmail.com"
+GIT_AUTHOR_EMAIL="user@email.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 
@@ -12,15 +12,15 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 ###############################################################################
 
 # custom directories ----------------------------------------------------------
-alias plugins="cd /LAB/projects/wp/plugins"
-alias themes="cd /LAB/projects/wp/themes"
+alias plugins="cd ~/projects/wp/plugins"
+alias themes="cd ~/projects/wp/themes"
 
-alias wp-plugins="cd /LAB/localhost/www/wordpress/en/wp-content/plugins"
-alias wp-themes="cd /LAB/localhost/www/wordpress/en/wp-content/themes"
+alias wp-plugins="cd ~/projects/wp/en/wp-content/plugins"
+alias wp-themes="cd ~/projects/wp/en/wp-content/themes"
 
 # directory for cloned repos
-alias clones="cd /LAB/projects/clones"
+alias clones="cd ~/projects/clones"
 
 
 alias db="cd ~/Dropbox"
-alias lab="cd /LAB/projects"
+alias lab="cd ~/projects"
