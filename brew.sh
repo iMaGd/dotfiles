@@ -159,12 +159,18 @@ brew cask install anki adobe-acrobat-reader
 brew cask install openinterminal
 
 # Preview list of useful Quick Look plugins for developers
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
+# brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
 
-# Install fonts
+# Install fonts -
+# https://www.nerdfonts.com/font-downloads
+# https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code font-courier-new
-brew cask install font-droidsansmono-nerd-font-mono
+brew install font-fira-code font-fira-mono-nerd-font
+brew install font-cascadia-code
+brew install font-jetbrains-mono-nerd-font
+brew install font-hack font-hack-nerd-font
+brew install font-awesome-terminal-fonts
+brew install font-code-new-roman-nerd-font
 
 # Cross-platform monitoring tool
 brew install glances progress
