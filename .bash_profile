@@ -51,3 +51,30 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# Better tab title
+function set_tab_name () {
+	# Check if this is a git repository, start project name with `$`
+	if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+		project_name=$(basename "$PWD")
+		echo -ne "\033]0;\$$project_name\007"
+	else
+		# Initialize context variable
+		context="$PWD"
+
+		# Check if the length of PWD is greater than 15 characters
+		if [ ${#PWD} -gt 15 ]; then
+			# Trim the path and get the last 15 characters only
+			context="...${PWD: -15}"
+		fi
+
+		# Set the terminal title
+		echo -ne "\033]0;${context##*/}\007"
+	fi
+}
+
+if [ -n "$ZSH_VERSION" ]; then
+  precmd_functions+=(set_tab_name)
+elif [ -n "$BASH_VERSION" ]; then
+  PROMPT_COMMAND='set_tab_name'
+fi
