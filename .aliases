@@ -51,7 +51,7 @@ alias sizel='du -sch /*'
 alias hosts="sudo nano /etc/hosts"
 
 alias jpg='jpegoptim'
-alias png='optipng'
+alias png='pngquant'
 
 alias c='pygmentize -O style=monokai -f console256 -g'
 # Empty the Trash on all mounted volumes and the main HDD

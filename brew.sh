@@ -105,7 +105,7 @@ brew install dropbox evernote --cask
 
 # Image optimization
 brew cask install imageoptim imagealpha
-brew install jpegoptim optipng
+brew install jpegoptim optipng pngquant
 
 # Security apps
 brew cask install macpass
