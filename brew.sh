@@ -71,6 +71,10 @@ brew install git git-lfs git-extras git-quick-stats
 # Install docker
 brew cask install docker
 
+# Install AWS cli
+brew install awscli
+brew install --cask aws-vault
+
 # Javascript package managers
 brew install node yarn
 
