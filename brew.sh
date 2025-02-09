@@ -154,7 +154,11 @@ brew install openconnect
 brew cask install Itsycal
 
 # Youtube downloader
-brew install youtube-dl
+brew install yt-dlp
+
+# Install IaC
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 
 # Document apps
 brew cask install anki adobe-acrobat-reader
