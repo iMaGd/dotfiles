@@ -10,8 +10,6 @@ npm config set registry http://registry.npmjs.org/
 
 # NPM packages
 npm install -g grunt-cli
-npm install -g gulp-cli
-npm install -g bower
 npm install -g typescript
 npm install -g browserify
 npm install -g csslint

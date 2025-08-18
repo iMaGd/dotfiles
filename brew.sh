@@ -39,16 +39,16 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-brew install php@7.3 php@7.4 php
+# brew install php@7.3 php@7.4 php@8.0
 brew install gmp
 
 # Catalina required libraries
-brew install openldap libiconv
+# brew install openldap libiconv
 
 # =============================================
 
 # Better alternative for spotlight
-brew cask install alfred
+brew install --cask alfred
 
 # libraries to manipulate media
 brew install imagemagick --with-webp
@@ -59,7 +59,7 @@ brew install ffmpeg tree rename
 brew install ssh-copy-id sshpass
 
 # RAR Archiver
-brew cask install rar keka
+brew install --cask rar keka
 # brew install unrar pigz
 
 # SVN
@@ -69,7 +69,7 @@ brew install svn
 brew install git git-lfs git-extras git-quick-stats
 
 # Install docker
-brew cask install docker
+brew install --cask docker
 
 # Install AWS cli
 brew install awscli
@@ -82,7 +82,7 @@ brew install node yarn
 brew install rsync
 
 # Python
-brew install python
+# brew install python
 
 # Compare files and folders using simple, powerful commands
 brew install beyond-compare --cask
@@ -97,34 +97,38 @@ brew install google-chrome firefox --cask
 brew install opera brave-browser --cask
 
 # Development general tools
-brew install --cask warp iterm2
+# brew install --cask iterm2
+brew install --cask warp
 brew install --cask visual-studio-code poedit postman
 
 # Communication apps
 brew install discord telegram skype microsoft-teams --cask
-brew install teamspeak-client teamviewer anydesk --cask
+# brew install --cask teamspeak-client teamviewer anydesk
 
 # Share apps
-brew install dropbox evernote --cask
+brew install dropbox --cask
 
 # Image optimization
-brew cask install imageoptim imagealpha
+brew install --cask imageoptim imagealpha
 brew install jpegoptim optipng pngquant
 
 # Security apps
-brew cask install macpass
+brew install --cask macpass
 
-# Network
+# Network performance
 brew install speedtest-cli
+
+# Network protocol analyzer
+brew install --cask wireshark
 
 # Network apps
 brew install secure-pipes --cask
 
 # Music apps
-brew cask install spotify
+brew install --cask spotify
 
 # Media apps
-brew cask install elmedia-player iina
+brew install --cask elmedia-player iina
 
 # Flip clock screem saver
 brew install fliqlo --cask
@@ -142,7 +146,7 @@ brew install transmit cyberduck android-file-transfer --cask
 brew install progressive-downloader folx --cask
 
 # Simple and visually-pleasing Pomodoro timer
-brew cask install pomotroid
+brew install --cask pomotroid
 
 # Torrent
 brew install qBittorrent --cask
@@ -151,9 +155,9 @@ brew install qBittorrent --cask
 brew install openconnect
 
 # A tiny menu bar calendar
-brew cask install Itsycal
+brew install --cask Itsycal
 
-# Youtube downloader
+# YT downloader
 brew install yt-dlp
 
 # Install IaC
@@ -161,13 +165,13 @@ brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 
 # Document apps
-brew cask install anki adobe-acrobat-reader
+brew install --cask anki adobe-acrobat-reader
 
 # Finder Toolbar app for macOS to open the current directory in Terminal
-brew cask install openinterminal
+brew install --cask openinterminal
 
 # Preview list of useful Quick Look plugins for developers
-# brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
+# brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
 
 # Install fonts -
 # https://www.nerdfonts.com/font-downloads
