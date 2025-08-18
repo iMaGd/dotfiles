@@ -190,6 +190,8 @@ alias gl="git log --graph --abbrev-commit --date=relative --format=format:'%C(ye
 
 alias gla="git log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) - %C(reset) %C(bold)(%ar)%C(reset) by %C(bold)%an%C(reset) in%C(yellow)%d%C(reset)%n''          %C(green)%s%C(reset)' --all"
 
+alias glb="git --no-pager log master..HEAD --oneline"
+
 alias gll="git log --abbrev-commit --date=relative --format=format:' - %C(yellow)%h%C(reset) - %C(blue)%cr%C(reset): %C(green)%s%C(reset) by %an%C(reset)%C(bold yellow)%d%C(reset)'"
 
 alias undopush="git push -f origin HEAD^:master"
@@ -202,9 +204,20 @@ alias gch="git checkout"
 
 # PHP dev alises ------------------------------------------------------------
 # for Laravel
-alias lara="php artisan"
+alias pa="php artisan"
+alias pac="php artisan route:cache && php artisan view:cache && php artisan config:cache && php artisan horizon:clear"
+alias cr="composer run-script"
+
 # for Symfony
 alias console="php bin/console"
+alias pc="php bin/console"
+# PHPStorm
+alias pstorm='open -a /Applications/PhpStorm.app'
+alias pstorms='cd ~/projects/pstorm'
+alias pest='php artisan test --testsuite=Unit --stop-on-failure --parallel --processes=4'
+
+# Docker alises --------------------------------------------------------------
+alias dr='docker run -it --rm'
 
 # ----------------------------------------------------------------
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
