@@ -51,7 +51,7 @@ alias sizel='du -sch /*'
 alias hosts="sudo nano /etc/hosts"
 
 alias jpg='jpegoptim'
-alias png='pngquant'
+alias png='optipng'
 
 alias c='pygmentize -O style=monokai -f console256 -g'
 # Empty the Trash on all mounted volumes and the main HDD
@@ -62,7 +62,7 @@ alias bc='bc -l'
 alias now='date +"%T'
 # list all TCP/UDP port on the server #
 alias ports='netstat -tulanp'
-alias tree="find . -print | sed -e 's;[^/]*/;|--;g;s;--|;   |;g'"
+#alias tree="find . -print | sed -e 's;[^/]*/;|--;g;s;--|;   |;g'"
 
 
 alias o="open"
@@ -185,6 +185,7 @@ alias ga="git add "
 alias gb="git branch"
 alias gbl="git branch --list"
 alias gd="git diff "
+alias gre="git restore --staged"
 
 alias gl="git log --graph --abbrev-commit --date=relative --format=format:'%C(yellow)%h%C(reset) - %C(blue)%cr%C(reset): %C(green)%s%C(reset) by %an%C(reset)%C(bold yellow)%d%C(reset)'"
 
@@ -194,29 +195,34 @@ alias glb="git --no-pager log master..HEAD --oneline"
 
 alias gll="git log --abbrev-commit --date=relative --format=format:' - %C(yellow)%h%C(reset) - %C(blue)%cr%C(reset): %C(green)%s%C(reset) by %an%C(reset)%C(bold yellow)%d%C(reset)'"
 
+
 alias undopush="git push -f origin HEAD^:master"
 alias gdev="git checkout develop"
 alias gmas="git checkout master"
 alias gc="git commit"
 alias gcm="git commit -m"
-alias gcam="git commit -a -m"
+alias gcam="git commit -am"
 alias gch="git checkout"
 
-# PHP dev alises ------------------------------------------------------------
-# for Laravel
+# PHP Dev alises ------------------------------------------------------------
+# Laravel
 alias pa="php artisan"
+alias pam="php artisan make:"
 alias pac="php artisan route:cache && php artisan view:cache && php artisan config:cache && php artisan horizon:clear"
-alias cr="composer run-script"
+alias pest='php artisan test --testsuite=Unit --stop-on-failure --parallel --processes=4'
 
-# for Symfony
+# Craft CMS
+alias dc="ddev craft"
+
+# Symfony
 alias console="php bin/console"
 alias pc="php bin/console"
+
 # PHPStorm
 alias pstorm='open -a /Applications/PhpStorm.app'
 alias pstorms='cd ~/projects/pstorm'
-alias pest='php artisan test --testsuite=Unit --stop-on-failure --parallel --processes=4'
 
-# Docker alises --------------------------------------------------------------
+# Docker
 alias dr='docker run -it --rm'
 
 # ----------------------------------------------------------------
