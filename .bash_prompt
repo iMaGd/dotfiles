@@ -108,9 +108,10 @@ fi;
 # Set the terminal title and prompt.
 PS1="\[\033]0;\W\007\]"; # working directory base name
 PS1+="\[${bold}\]\n"; # newline
-#PS1+="Me"; # username - "Me"
+PS1+="\[${cyan}\]╭── \[${userStyle}\]"; # username - "Me" or "\u"
+PS1+="Me"; # username - "Me"
 #PS1+="\u"; # username - current user
-PS1+="$(tr '[:lower:]' '[:upper:]' <<< ${USER:0:1})${USER:1}"; # current user first letter uppercased
+#PS1+="$(tr '[:lower:]' '[:upper:]' <<< ${USER:0:1})${USER:1}"; # username - current user uppercase first letter
 #PS1+="\[${hostStyle}\] \h"; # host
 PS1+="\[${white}\] @ ";
 PS1+="\[${green}\]\D{%I:%M}"; # time - D{%T} HH:MM:SS or D{%I:%M %p} HH:MM AM/PM
