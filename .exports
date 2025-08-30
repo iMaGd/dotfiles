@@ -7,20 +7,68 @@ GIT_AUTHOR_EMAIL="user@email.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 
-###############################################################################
-# Custom alias                                                       #
-###############################################################################
+# Quick SSH connect ---------------
+function connect() {
+    # Define connection options with server details
+    declare -A servers=(
+        ["server1"]="user@ip:522"
+        ["server2"]="user@ip:522"
+    )
 
-# custom directories ----------------------------------------------------------
-alias plugins="cd ~/projects/wp/plugins"
-alias themes="cd ~/projects/wp/themes"
+    # Print available options
+    echo "Available connections:"
+    PS3='Select the connection (or enter q to quit): '
 
-alias wp-plugins="cd ~/projects/wp/en/wp-content/plugins"
-alias wp-themes="cd ~/projects/wp/en/wp-content/themes"
+    # Create options array from server names
+    options=(${!servers[@]} "Quit")
 
-# directory for cloned repos
-alias clones="cd ~/projects/clones"
+    select opt in "${options[@]}"
+    do
+        # Handle quit option
+        if [[ $REPLY == "q" || $opt == "Quit" ]]; then
+            break
+        fi
+
+        # Validate selection
+        if [[ -n $opt && ${servers[$opt]+_} ]]; then
+            # Extract server details and connect
+            IFS=':' read -r server port <<< "${servers[$opt]}"
+            ssh "$server" -p "$port"
+            break
+        else
+            echo "Invalid option '$REPLY'. Please try again or enter 'q' to quit."
+        fi
+    done
+}
 
 
-alias db="cd ~/Dropbox"
-alias lab="cd ~/projects"
+function pro(){
+    if [ -f ~/projects/workspace/$1.code-workspace ]; then
+        open ~/projects/workspace/$1.code-workspace;
+        echo "Switched to [${PWD}]";
+    fi;
+
+	if [ -d ~/projects/pstorm/$1 ]; then
+        cd ~/projects/pstorm/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+	if [ -d ~/projects/ddev/$1 ]; then
+        cd ~/projects/ddev/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+    if [ -d ~/projects/herds/$1 ]; then
+        cd ~/projects/herds/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+
+	if [ -d ~/projects/clones/$1 ]; then
+        cd ~/projects/clones/$1;
+        echo "Switched to [${PWD}]";
+        return 0;
+    fi;
+}
