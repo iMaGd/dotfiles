@@ -13,3 +13,6 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # Create projects directory
 mkdir -p ~/projects/{herds,ddevs,pstorm,crafts/plugins,wp-development/plugins}
+
+# Custom directories
+mkdir -p ~/Branches/{ME,MEDIA} ~/Dropbox
