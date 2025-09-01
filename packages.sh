@@ -5,9 +5,6 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# use none-ssl node respository
-npm config set registry http://registry.npmjs.org/
-
 # NPM packages
 npm install -g grunt-cli
 npm install -g typescript
@@ -20,4 +17,4 @@ npm install -g trash-cli
 # Gem packages
 gem install compass
 gem install uglifier
-gem install lolcommits
+# gem install lolcommits
