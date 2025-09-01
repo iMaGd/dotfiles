@@ -1,5 +1,5 @@
 
-# Sync the repo by latest changes for vscode in local mashine
+# Sync the repo by latest changes for vscode in local machine
 rsync -av --progress --delete-after ~/Library/Application\ Support/Code/User ./vscode --exclude workspaceStorage --exclude globalStorage --exclude syncLocalSettings.json
 
 # Generate extensions list
