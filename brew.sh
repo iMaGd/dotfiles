@@ -60,7 +60,10 @@ brew install ssh-copy-id sshpass
 
 # RAR Archiver
 brew install --cask rar keka
-# brew install unrar pigz
+brew install zip unzip
+
+# Install Network tools
+brew install htop
 
 # SVN
 brew install svn

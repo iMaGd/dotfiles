@@ -30,9 +30,6 @@ brew install nginx
 # Install WordPress command tools
 brew install wp-cli wpscan
 
-# Install Network tools
-brew install htop
-
 # Web interface for MySQL and MariaDB
 # brew install phpmyadmin
 
