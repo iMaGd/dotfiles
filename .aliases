@@ -211,17 +211,3 @@ alias pstorms='cd ~/projects/pstorm'
 
 # Docker
 alias dr='docker run -it --rm'
-
-# Porject Directories --------------------------------------------------------
-
-PROJECTS_DIR=~/projects
-
-# custom directories --------------
-alias wp-plugins="cd $PROJECTS_DIR/wp-development/plugins"
-alias wp-themes="cd $PROJECTS_DIR/wp-development/themes"
-alias clones="cd $PROJECTS_DIR/clones"
-alias herds="cd $PROJECTS_DIR/herds"
-alias ddevs="cd $PROJECTS_DIR/ddevs"
-alias pstorms="cd $PROJECTS_DIR/pstorm"
-alias crafts="cd $PROJECTS_DIR/crafts"
-alias craft-plugins="cd $PROJECTS_DIR/crafts/plugins"

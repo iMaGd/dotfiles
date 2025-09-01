@@ -41,34 +41,46 @@ function connect() {
     done
 }
 
+# Project Directories --------------------------------------------------------
 
-function pro(){
-    if [ -f ~/projects/workspace/$1.code-workspace ]; then
-        open ~/projects/workspace/$1.code-workspace;
-        echo "Switched to [${PWD}]";
-    fi;
+PROJECTS_DIR=~/projects
 
-	if [ -d ~/projects/pstorm/$1 ]; then
-        cd ~/projects/pstorm/$1;
-        echo "Switched to [${PWD}]";
-        return 0;
-    fi;
+# custom directories --------------
+alias pstorms="cd $PROJECTS_DIR/pstorm"
+alias herds="cd $PROJECTS_DIR/herds"
+alias ddevs="cd $PROJECTS_DIR/ddevs"
+alias wp-plugins="cd $PROJECTS_DIR/wp-development/plugins"
+alias wp-themes="cd $PROJECTS_DIR/wp-development/themes"
+alias clones="cd $PROJECTS_DIR/clones"
+alias crafts="cd $PROJECTS_DIR/crafts"
+alias craft-plugins="cd $PROJECTS_DIR/crafts/plugins"
 
-	if [ -d ~/projects/ddev/$1 ]; then
-        cd ~/projects/ddev/$1;
-        echo "Switched to [${PWD}]";
-        return 0;
-    fi;
 
-    if [ -d ~/projects/herds/$1 ]; then
-        cd ~/projects/herds/$1;
-        echo "Switched to [${PWD}]";
-        return 0;
-    fi;
+function pro() {
+    if [ -f "${PROJECTS_DIR}/workspace/$1.code-workspace" ]; then
+        open "${PROJECTS_DIR}/workspace/$1.code-workspace"
+        echo "Switched to [${PWD}]"
+    fi
 
-	if [ -d ~/projects/clones/$1 ]; then
-        cd ~/projects/clones/$1;
-        echo "Switched to [${PWD}]";
-        return 0;
-    fi;
+    # Defining project directories to be checked
+    local project_dirs=(
+        "pstorm"
+        "herds"
+        "ddev"
+        "wp-development/plugins"
+        "wp-development/themes"
+        "clones"
+        "crafts"
+        "crafts/plugins"
+    )
+
+    # Loop through each project directory
+    for dir in "${project_dirs[@]}"; do
+        local project_path="${PROJECTS_DIR}/${dir}/$1"
+        if [ -d "$project_path" ]; then
+            cd "$project_path"
+            echo "Switched to [${PWD}]"
+            return 0
+        fi
+    done
 }
