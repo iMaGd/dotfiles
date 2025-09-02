@@ -79,7 +79,7 @@ brew install awscli
 brew install --cask aws-vault
 
 # Javascript package managers
-brew install node yarn
+brew install node yarn nvm
 
 # Install rsync
 brew install rsync
@@ -91,7 +91,7 @@ brew install rsync
 brew install beyond-compare --cask
 
 # Move and resize windows
-brew install spectacle --cask
+brew install rectangle --cask
 
 # Install Chrome & Firefox
 brew install google-chrome firefox --cask
