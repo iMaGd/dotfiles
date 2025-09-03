@@ -39,7 +39,7 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 brew install screen
-# brew install php@7.3 php@7.4 php@8.0
+brew install mkcert nss
 brew install gmp
 
 # Catalina required libraries
