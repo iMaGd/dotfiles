@@ -200,6 +200,7 @@ alias pest='php artisan test --testsuite=Unit --stop-on-failure --parallel --pro
 
 # Craft CMS
 alias dc="ddev craft"
+alias dcc="ddev exec php craft clear-caches/all"
 
 # Symfony
 alias console="php bin/console"
