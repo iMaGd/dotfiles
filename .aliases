@@ -44,7 +44,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias ls="ls ${colorflag}"
 
 
-alias fs="stat -f \"%z bytes\""
 alias size='du -sh '
 alias sizes='du -sh --max-depth=1 '
 alias sizel='du -sch /*'
@@ -62,6 +61,7 @@ alias now='date +"%T'
 # list all TCP/UDP port on the server #
 alias ports='netstat -tulanp'
 alias newbash="echo '#!/usr/bin/env bash' > "
+alias newmake="echo -e 'help:\n\t@grep '^[a-zA-Z]' Makefile'"
 
 alias o="open"
 alias oo="open ."
