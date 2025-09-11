@@ -212,3 +212,4 @@ alias pstorms='cd ~/projects/pstorm'
 
 # Docker
 alias dr='docker run -it --rm'
+alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
