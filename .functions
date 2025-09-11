@@ -255,3 +255,61 @@ gclone ()
 hr () {
    printf "%$(tput cols)s\n"|tr " " "─"}}
 }
+
+
+function list_menu() {
+    local -r prompt="$1" outvar="$2" outval="$3"
+    # Skip the first 3 arguments and process the rest as key-value pairs
+    shift 3
+
+    # Create arrays for display text and values
+    local display_texts=() values=()
+
+    # Process arguments as key-value pairs
+    while (( $# > 0 )); do
+        display_texts+=("$1")
+        values+=("$2")
+        shift 2
+    done
+
+    local cur=0 count=${#display_texts[@]} index=0
+    local esc=$(echo -en "\e") # cache ESC as test doesn't allow esc codes
+    printf "$prompt\n"
+    while true
+    do
+        # list all options
+        index=0
+        for o in "${display_texts[@]}"
+        do
+            if [ "$index" == "$cur" ]
+            then echo -e "> \e[42m$o\e[0m" # mark & highlight the current option
+            else echo "  $o"
+            fi
+            (( ++index ))
+        done
+        read -s -n3 key # wait for user to key in arrows or ENTER
+        if [[ $key == $esc[A ]] # up arrow
+        then (( cur-- )); (( cur < 0 )) && (( cur = 0 ))
+        elif [[ $key == $esc[B ]] # down arrow
+        then (( ++cur )); (( cur >= count )) && (( cur = count - 1 ))
+        elif [[ $key == "" ]]
+        then break
+        fi
+        echo -en "\e[${count}A" # go up to the beginning to re-render
+    done
+
+    # export the selection to the requested output variables
+    printf -v $outvar "${display_texts[$cur]}"
+    printf -v $outval "${values[$cur]}"
+}
+
+# Displays a list menu to connect to a target servers
+function connect_to_target() {
+    local targets_list=("$@")  # capture array
+    local selected_target_key selected_target_value
+
+    list_menu "Choice target:\n" selected_target_key selected_target_value "${targets_list[@]}"
+    echo -e "\nConnecting to [${selected_target_key}]: $selected_target_value ..\n"
+
+    eval "$selected_target_value"
+}
