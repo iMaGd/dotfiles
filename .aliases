@@ -46,7 +46,9 @@ alias ls="ls ${colorflag}"
 
 alias size='du -sh '
 alias sizes='du -sh --max-depth=1 '
-alias sizel='du -sch /*'
+alias duu='du -sh ./* | sort -rh | head -n 10'
+alias dff='df -xh '
+
 alias hosts="sudo nano /etc/hosts"
 
 alias jpg='jpegoptim'
