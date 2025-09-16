@@ -157,9 +157,6 @@ brew install qBittorrent --cask
 # Open client for Cisco AnyConnect
 brew install openconnect
 
-# A tiny menu bar calendar
-brew install --cask Itsycal
-
 # YT downloader
 brew install yt-dlp
 
@@ -192,6 +189,11 @@ brew install glances progress
 
 # Update gem
 gem update --system
+
+# =============================================
+
+# Install MenuMeter
+# https://github.com/yujitach/MenuMeters/releases/latest
 
 # =============================================
 
