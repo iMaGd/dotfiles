@@ -27,12 +27,13 @@ PROJECTS_DIR=~/projects
 alias pstorms="cd $PROJECTS_DIR/pstorm"
 alias herds="cd $PROJECTS_DIR/herds"
 alias ddevs="cd $PROJECTS_DIR/ddevs"
+alias clouds="cd $PROJECTS_DIR/clouds"
+alias clones="cd $PROJECTS_DIR/clones"
+alias notes="cd $PROJECTS_DIR/notes"
 alias wp-plugins="cd $PROJECTS_DIR/wp-development/plugins"
 alias wp-themes="cd $PROJECTS_DIR/wp-development/themes"
-alias clones="cd $PROJECTS_DIR/clones"
 alias crafts="cd $PROJECTS_DIR/ddevs/crafts"
 alias craft-plugins="cd $PROJECTS_DIR/crafts-plugins"
-
 
 function pro() {
     if [ -f "${PROJECTS_DIR}/workspace/$1.code-workspace" ]; then
