@@ -313,3 +313,30 @@ function connect_to_target() {
 
     eval "$selected_target_value"
 }
+
+# Template for Eisenhower Box
+eisenhower() {
+cat <<EOF
+- Urgent:
+    - Important (Do)
+        - [ ]
+        - [ ]
+
+    - NOT Important (Delegate)
+        - [ ]
+        - [ ]
+
+- NOT Urgent:
+    - Important (Schedule)
+        - [ ]
+        - [ ]
+
+    - NOT Important (Delete!)
+        - [ ]
+        - [ ]
+
+- Backlog:
+        - [ ]
+        - [ ]
+EOF
+}
