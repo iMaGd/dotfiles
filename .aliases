@@ -174,7 +174,6 @@ alias ga="git add "
 alias gb="git branch"
 alias gbl="git branch --list"
 alias gd="git diff "
-alias gre="git restore --staged"
 
 alias gl="git log --graph --abbrev-commit --date=relative --format=format:'%C(yellow)%h%C(reset) - %C(blue)%cr%C(reset): %C(green)%s%C(reset) by %an%C(reset)%C(bold yellow)%d%C(reset)'"
 
@@ -187,11 +186,13 @@ alias gll="git log --abbrev-commit --date=relative --format=format:' - %C(yellow
 
 alias undopush="git push -f origin HEAD^:master"
 alias gdev="git checkout develop"
+alias gma="git checkout main"
 alias gmas="git checkout master"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gch="git checkout"
+alias gre="git restore --staged"
 
 # PHP Dev alises ------------------------------------------------------------
 # Laravel
