@@ -1,24 +1,16 @@
+// {
+//     "terminal.integrated.defaultProfile.osx": "bash",
+//     "AI.toolcall.confirmMode": "autoRun",
+//     "explorer.confirmDragAndDrop": false,
+//     "editor.fontSize": 16,
+//     "editor.fontFamily": "Fira Code, Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
+//     "editor.fontLigatures": true,
+//     "editor.fontWeight": "400",
+//     "explorer.confirmDelete": false
+// }
 {
-    "cSpell.language": "en,en-US",
-    "cSpell.showStatus": false,
-    "cSpell.enableFiletypes": [
-        "go",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "markdown",
-        "php",
-        "python",
-        "text",
-        "typescript",
-        "typescriptreact",
-        "yml"
-    ],
-    "spell.StopAsking": true,
-
-
-    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'DroidSansMono Nerd Font', Monaco, 'Courier New', monospace",
-    "editor.fontWeight": "500",
+    "editor.fontFamily": "Fira Code,Droid Sans Mono,DroidSansMono Nerd Font,Cascadia Code, Monaco,Courier New,monospace",
+    "editor.fontWeight": "400",
     "editor.lineHeight": 24.65,
     "editor.letterSpacing": 0.5,
     "editor.renderWhitespace": "all",
@@ -34,21 +26,10 @@
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
     "editor.formatOnPaste": false,
-    "editor.insertSpaces": false,
+    // "editor.insertSpaces": false,
     "editor.glyphMargin": true,
     "editor.rulers": [80],
     "editor.accessibilitySupport": "off",
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "comment",
-                "settings": {
-                    "fontStyle": ""
-                }
-            }
-        ]
-    },
-
 
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -73,22 +54,18 @@
     "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "explorer.openEditors.visible": 0,
-
 
     "typescript.check.npmIsInstalled": false,
     "typescript.validate.enable": false,
 
-
     "javascript.validate.enable": false,
     "javascript.format.enable": false,
-    "json.format.enable": false,
 
-    //"editor.formatOnSave": true,
     "[php]":{
-        "editor.formatOnSave": false
+        "editor.formatOnSave": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
     },
-
 
     "emmet.includeLanguages": {
         "vue-html": "html",
@@ -100,25 +77,10 @@
     "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
 
-
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.fontAliasing": "auto",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.colorTheme": "Plastic",
-    "workbench.iconTheme": "ayu",
-    "workbench.tree.indent": 25,
-
-    "workbench.colorCustomizations": {
-        "activityBarBadge.background": "#FDCC72",
-        "activityBarBadge.foreground": "#181818",
-        "focusBorder": "#333841",
-        //"statusBar.background" : "#2A2A2B",
-        //"statusBar.noFolderBackground" : "#252526",
-        //"statusBar.debuggingBackground": "#252526",
-        //"editorIndentGuide.activeBackground": "#444",
-        //"editorIndentGuide.background": "#444",
-    },
+    "workbench.tree.indent": 20,
 
 
     "terminal.integrated.macOptionIsMeta": true,
@@ -126,7 +88,6 @@
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.fontWeightBold": "500",
-    "terminal.integrated.shellArgs.osx": ["-l"],
     "terminal.integrated.cursorStyle": "line",
 
 
@@ -135,20 +96,9 @@
     "gitlens.views.repositories.avatars": false,
     "gitlens.views.fileHistory.avatars": false,
     "gitlens.views.lineHistory.avatars": false,
-    "gitlens.views.search.avatars": false,
-    "gitlens.views.compare.avatars": false,
     "gitlens.blame.avatars": false,
 
-    "sublimeTextKeymap.promptV3Features": true,
     "html.format.wrapLineLength": 80,
-
-
-    "sync.autoUpload": true,
-    "sync.quietSync": true,
-    "sync.gist": "e4db63d50a7bd40211d2e1ed9abaa98e",
-    "explorer.decorations.colors": false,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "terminal.integrated.rendererType": "dom",
 
     "intelephense.stubs": [
         "apache",
@@ -225,5 +175,6 @@
         "wordpress"
     ],
     "intelephense.files.maxSize": 4000000,
-    "todo-tree.tree.showScanModeButton": false
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "AI.toolcall.confirmMode": "autoRun",
 }
