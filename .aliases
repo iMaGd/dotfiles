@@ -217,3 +217,9 @@ alias pstorms='cd ~/projects/pstorm'
 alias dr='docker run -it --rm'
 alias drd="docker run -d ubuntu --name my-ubuntu"
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+
+# Tmux
+alias tmuxn="tmux new -s"
+alias tmuxa="tmux attach -t"
+alias tmuxl="tmux ls"
+alias tmuxd="tmux detach"
