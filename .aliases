@@ -214,7 +214,7 @@ alias pstorm='open -a /Applications/PhpStorm.app'
 alias pstorms='cd ~/projects/pstorm'
 
 # Docker
-alias dr='docker run -it --rm'
+alias dr='docker run -it --rm ubuntu bash'
 alias drd="docker run -d ubuntu --name my-ubuntu -p <hostPort>:<containerPort>"
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias drp='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
