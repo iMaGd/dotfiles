@@ -215,8 +215,11 @@ alias pstorms='cd ~/projects/pstorm'
 
 # Docker
 alias dr='docker run -it --rm'
-alias drd="docker run -d ubuntu --name my-ubuntu"
+alias drd="docker run -d ubuntu --name my-ubuntu -p <hostPort>:<containerPort>"
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias drp='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias dex="docker exec -it my-ubuntu bash"
+alias dst="docker stop my-ubuntu"
 
 # Tmux
 alias tmuxn="tmux new -s"
