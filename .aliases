@@ -218,12 +218,16 @@ alias dr='docker run -it --rm ubuntu bash'
 alias drd="docker run -d ubuntu --name my-ubuntu -p <hostPort>:<containerPort>"
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias drp='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias dre='docker remove'
 alias dex="docker exec -it my-ubuntu bash"
 alias dst="docker stop my-ubuntu"
 alias dpr="docker container prune"
 
 # Tmux
 alias tmuxn="tmux new -s"
-alias tmuxa="tmux attach -t"
+alias tmuxa="tmux a -t" # tmux attach -t
 alias tmuxl="tmux ls"
-alias tmuxd="tmux detach"
+alias tmuxd="tmux kill-session -t"
+alias tmuxk="tmux kill-session -t"
+alias tmuxda="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+alias tmuxka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
