@@ -220,6 +220,7 @@ alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Stat
 alias drp='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias dex="docker exec -it my-ubuntu bash"
 alias dst="docker stop my-ubuntu"
+alias dpr="docker container prune"
 
 # Tmux
 alias tmuxn="tmux new -s"
