@@ -231,3 +231,9 @@ alias tmuxd="tmux kill-session -t"
 alias tmuxk="tmux kill-session -t"
 alias tmuxda="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 alias tmuxka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+
+# Utils ------------------------------------------------------------
+
+alias json='jq . <<EOF | pbcopy
+{"name": "John"}
+EOF'
