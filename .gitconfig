@@ -83,6 +83,9 @@
     # Remove all local merged branches except 'master' and 'develop' branches
     rub = "git branch --merged develop | grep -v develop | grep -v master | xargs -n 1 git branch -d"
 
+    # Restore working tree and interactively clean untracked files
+    wipe = !git restore . && git clean -i -d
+    discard = !git restore . && git clean -i -d
 
     # Show the diff of everything you haven't pushed yet.
     unpushed = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) || git diff origin/$branch..HEAD }; f"

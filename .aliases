@@ -193,6 +193,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gch="git checkout"
 alias gre="git restore --staged"
+alias gdiscard="git restore . && git clean -i -d"
 
 # PHP Dev alises ------------------------------------------------------------
 # Laravel
@@ -234,6 +235,6 @@ alias tmuxka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length(
 
 # Utils ------------------------------------------------------------
 
-alias json='jq . <<EOF | pbcopy
+alias json='jq <<EOF | pbcopy
 {"name": "John"}
 EOF'
