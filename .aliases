@@ -52,7 +52,7 @@ alias dff='df -xh '
 alias hosts="sudo nano /etc/hosts"
 
 alias jpg='jpegoptim'
-alias png='optipng'
+alias png='pngquant 256 --quality=65-85 file.png'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed

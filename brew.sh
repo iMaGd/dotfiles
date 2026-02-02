@@ -113,7 +113,7 @@ brew install dropbox --cask
 
 # Image optimization
 brew install --cask imageoptim imagealpha
-brew install jpegoptim optipng pngquant
+brew install jpegoptim pngquant
 
 # Security apps
 brew install --cask macpass
