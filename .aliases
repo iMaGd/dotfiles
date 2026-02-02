@@ -167,6 +167,8 @@ alias reload="exec $SHELL -l"
 # Faster npm for Europeans
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
 
+# Generate a lowercase UUID
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
 
 # git alises ------------------------------------------------------------
 alias gs="git status"
