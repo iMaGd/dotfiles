@@ -199,10 +199,18 @@ alias gdiscard="git restore . && git clean -i -d"
 
 # PHP Dev alises ------------------------------------------------------------
 # Laravel
+# Laravel
 alias pa="php artisan"
 alias pam="php artisan make:"
-alias pac="php artisan route:cache && php artisan view:cache && php artisan config:cache && php artisan horizon:clear"
+alias pac="php artisan optimize:clear"
+alias pao="php artisan optimize:clear"
 alias pest='php artisan test --testsuite=Unit --stop-on-failure --parallel --processes=4'
+
+alias da="ddev artisan"
+alias dam="ddev artisan make:"
+alias dac="ddev artisan optimize:clear"
+alias dao="ddev artisan optimize:clear"
+alias dn="ddev npm"
 
 # Craft CMS
 alias dc="ddev craft"
