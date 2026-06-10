@@ -195,6 +195,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gch="git checkout"
 alias gre="git restore --staged"
+alias grc="git rm -r --cached"
 alias gdiscard="git restore . && git clean -i -d"
 
 # PHP Dev alises ------------------------------------------------------------
