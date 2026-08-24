@@ -27,7 +27,7 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
-# SSH 
+# SSH
 alias ssh-key='ssh-keygen -t ed25519 -a 100 -C -N "" "user@host"'
 
 # what colors to use when showing different types of files in the terminal
@@ -172,6 +172,8 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 
 # Generate a lowercase UUID
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+alias pass="openssl rand -base64 64 | tr -dc 'A-Za-z0-9@#\$' | head -c \$((14 + RANDOM % 9)); echo"
+alias passgen="openssl rand -base64 64 | tr -dc 'A-Za-z0-9@#\$' | head -c \$((14 + RANDOM % 9)); echo"
 
 # git alises ------------------------------------------------------------
 alias gs="git status"
