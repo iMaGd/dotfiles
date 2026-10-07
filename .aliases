@@ -232,10 +232,11 @@ alias pstorm='open -a /Applications/PhpStorm.app'
 alias pstorms='cd ~/projects/pstorm'
 
 # Docker
-alias dr='docker run -it --rm ubuntu bash'
+alias  dr='docker run --rm -it ubuntu bash'
+alias drp='docker run --rm -p 8080:80 nginx:1'
 alias drd="docker run -d ubuntu --name my-ubuntu -p <hostPort>:<containerPort>"
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
-alias drp='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias dra='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias dre='docker remove'
 alias dex="docker exec -it my-ubuntu bash"
 alias dst="docker stop my-ubuntu"
