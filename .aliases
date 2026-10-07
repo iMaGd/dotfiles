@@ -174,6 +174,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
 alias pass="openssl rand -base64 64 | tr -dc 'A-Za-z0-9@#\$' | head -c \$((14 + RANDOM % 9)); echo"
 alias passgen="openssl rand -base64 64 | tr -dc 'A-Za-z0-9@#\$' | head -c \$((14 + RANDOM % 9)); echo"
+alias keygen="ssh-keygen -t ed25519 -C \"email@example.com\" -f custom_key_name"
 
 # git alises ------------------------------------------------------------
 alias gs="git status"
